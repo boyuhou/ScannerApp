@@ -1,0 +1,9 @@
+name: currapp
+dependencies:
+- python=3.6
+- pandas=0.20.3
+- lxml=3.8.0
+- simplejson=3.11.1
+- pyqt
+- pip:
+  - click==6.7
