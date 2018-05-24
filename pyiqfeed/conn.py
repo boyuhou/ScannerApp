@@ -3095,7 +3095,7 @@ class BarConn(FeedConn):
     port = FeedConn.deriv_port
 
     interval_data_type = np.dtype(
-            [('symbol', 'S64'), ('date', 'M8[D]'), ('time', 'u8'),
+            [('id', 'U64'), ('symbol', 'U64'), ('datetime', 'U64'),
              ('open_p', 'f8'), ('high_p', 'f8'), ('low_p', 'f8'),
              ('close_p', 'f8'), ('tot_vlm', 'u8'), ('prd_vlm', 'u8'),
              ('num_trds', 'u8')])
@@ -3160,9 +3160,9 @@ class BarConn(FeedConn):
         assert fields[0][0] == "B" and fields[1][0] == "B"
 
         interval_data = self._empty_interval_msg
+        interval_data['id'] = fields[0]
         interval_data['symbol'] = fields[2]
-        interval_data['date'], interval_data['time'] = fr.read_posix_ts(
-                fields[3])
+        interval_data['datetime'] = fields[3]
         interval_data['open_p'] = np.float64(fields[4])
         interval_data['high_p'] = np.float64(fields[5])
         interval_data['low_p'] = np.float64(fields[6])

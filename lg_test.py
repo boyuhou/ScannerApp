@@ -5,7 +5,7 @@ import time
 
 if __name__ == "__main__":
 
-    instrument = Instrument(ticker='AUDUSD.FXCM', interval_in_seconds=60, bars_to_load=100, avg_period=20)
+    instrument = Instrument(ticker='AUDUSD.FXCM', interval_in_seconds=60, bars_to_load=100, avg_period=21)
 
     tickers = ['AUDCAD.FXCM',
                'AUDCHF.FXCM',

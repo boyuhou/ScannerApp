@@ -39,7 +39,7 @@ class Instrument(SilentBarListener):
                        update=self.bars_interval,
                        lookback_bars=self.bars_to_load)
             while True:
-                time.sleep(30000)
+                time.sleep(5)
 
     def on_data(self):
         self.df['avg'] = self.df['close_p'].rolling(window=self.avg_period).mean()
