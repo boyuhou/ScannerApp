@@ -1,250 +1,146 @@
-/********************************************************************************
-** Form generated from reading UI file 'scanner.ui'
-**
-** Created by: Qt User Interface Compiler version 5.6.2
-**
-** WARNING! All changes made in this file will be lost when recompiling UI file!
-********************************************************************************/
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'scanner.ui'
+#
+# Created by: PyQt5 UI code generator 5.9.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(336, 544)
+        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(Dialog)
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.label_2 = QtWidgets.QLabel(Dialog)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(Dialog)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout.addWidget(self.label_3)
+        self.label_7 = QtWidgets.QLabel(Dialog)
+        self.label_7.setObjectName("label_7")
+        self.verticalLayout.addWidget(self.label_7)
+        self.label_6 = QtWidgets.QLabel(Dialog)
+        self.label_6.setObjectName("label_6")
+        self.verticalLayout.addWidget(self.label_6)
+        self.label_4 = QtWidgets.QLabel(Dialog)
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout.addWidget(self.label_4)
+        self.label_8 = QtWidgets.QLabel(Dialog)
+        self.label_8.setObjectName("label_8")
+        self.verticalLayout.addWidget(self.label_8)
+        self.label_9 = QtWidgets.QLabel(Dialog)
+        self.label_9.setObjectName("label_9")
+        self.verticalLayout.addWidget(self.label_9)
+        self.label_10 = QtWidgets.QLabel(Dialog)
+        self.label_10.setObjectName("label_10")
+        self.verticalLayout.addWidget(self.label_10)
+        self.label_5 = QtWidgets.QLabel(Dialog)
+        self.label_5.setObjectName("label_5")
+        self.verticalLayout.addWidget(self.label_5)
+        self.label_11 = QtWidgets.QLabel(Dialog)
+        self.label_11.setObjectName("label_11")
+        self.verticalLayout.addWidget(self.label_11)
+        self.label_27 = QtWidgets.QLabel(Dialog)
+        self.label_27.setObjectName("label_27")
+        self.verticalLayout.addWidget(self.label_27)
+        self.label_12 = QtWidgets.QLabel(Dialog)
+        self.label_12.setObjectName("label_12")
+        self.verticalLayout.addWidget(self.label_12)
+        self.label_28 = QtWidgets.QLabel(Dialog)
+        self.label_28.setObjectName("label_28")
+        self.verticalLayout.addWidget(self.label_28)
+        self.label_13 = QtWidgets.QLabel(Dialog)
+        self.label_13.setObjectName("label_13")
+        self.verticalLayout.addWidget(self.label_13)
+        self.label_14 = QtWidgets.QLabel(Dialog)
+        self.label_14.setObjectName("label_14")
+        self.verticalLayout.addWidget(self.label_14)
+        self.label_15 = QtWidgets.QLabel(Dialog)
+        self.label_15.setObjectName("label_15")
+        self.verticalLayout.addWidget(self.label_15)
+        self.label_16 = QtWidgets.QLabel(Dialog)
+        self.label_16.setObjectName("label_16")
+        self.verticalLayout.addWidget(self.label_16)
+        self.label_17 = QtWidgets.QLabel(Dialog)
+        self.label_17.setObjectName("label_17")
+        self.verticalLayout.addWidget(self.label_17)
+        self.label_18 = QtWidgets.QLabel(Dialog)
+        self.label_18.setObjectName("label_18")
+        self.verticalLayout.addWidget(self.label_18)
+        self.label_19 = QtWidgets.QLabel(Dialog)
+        self.label_19.setObjectName("label_19")
+        self.verticalLayout.addWidget(self.label_19)
+        self.label_20 = QtWidgets.QLabel(Dialog)
+        self.label_20.setObjectName("label_20")
+        self.verticalLayout.addWidget(self.label_20)
+        self.label_21 = QtWidgets.QLabel(Dialog)
+        self.label_21.setObjectName("label_21")
+        self.verticalLayout.addWidget(self.label_21)
+        self.label_26 = QtWidgets.QLabel(Dialog)
+        self.label_26.setObjectName("label_26")
+        self.verticalLayout.addWidget(self.label_26)
+        self.label_25 = QtWidgets.QLabel(Dialog)
+        self.label_25.setObjectName("label_25")
+        self.verticalLayout.addWidget(self.label_25)
+        self.label_24 = QtWidgets.QLabel(Dialog)
+        self.label_24.setObjectName("label_24")
+        self.verticalLayout.addWidget(self.label_24)
+        self.label_23 = QtWidgets.QLabel(Dialog)
+        self.label_23.setObjectName("label_23")
+        self.verticalLayout.addWidget(self.label_23)
+        self.label_22 = QtWidgets.QLabel(Dialog)
+        self.label_22.setObjectName("label_22")
+        self.verticalLayout.addWidget(self.label_22)
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label.setText(_translate("Dialog", "AUDCAD"))
+        self.label_2.setText(_translate("Dialog", "AUDCHF"))
+        self.label_3.setText(_translate("Dialog", "AUDJPY"))
+        self.label_7.setText(_translate("Dialog", "AUDNZD"))
+        self.label_6.setText(_translate("Dialog", "AUDUSD"))
+        self.label_4.setText(_translate("Dialog", "CADCHF"))
+        self.label_8.setText(_translate("Dialog", "CADJPY"))
+        self.label_9.setText(_translate("Dialog", "CHFJPY"))
+        self.label_10.setText(_translate("Dialog", "EURAUD"))
+        self.label_5.setText(_translate("Dialog", "EURCAD"))
+        self.label_11.setText(_translate("Dialog", "EURCHF"))
+        self.label_27.setText(_translate("Dialog", "EURGBP"))
+        self.label_12.setText(_translate("Dialog", "EURJPY"))
+        self.label_28.setText(_translate("Dialog", "EURNZD"))
+        self.label_13.setText(_translate("Dialog", "EURUSD"))
+        self.label_14.setText(_translate("Dialog", "GBPAUD"))
+        self.label_15.setText(_translate("Dialog", "GBPCAD"))
+        self.label_16.setText(_translate("Dialog", "GBPCHF"))
+        self.label_17.setText(_translate("Dialog", "GBPJPY"))
+        self.label_18.setText(_translate("Dialog", "GBPNZD"))
+        self.label_19.setText(_translate("Dialog", "GBPUSD"))
+        self.label_20.setText(_translate("Dialog", "NZDCAD"))
+        self.label_21.setText(_translate("Dialog", "NZDCHF"))
+        self.label_26.setText(_translate("Dialog", "NZDJPY"))
+        self.label_25.setText(_translate("Dialog", "NZDUSD"))
+        self.label_24.setText(_translate("Dialog", "USDCAD"))
+        self.label_23.setText(_translate("Dialog", "USDCHF"))
+        self.label_22.setText(_translate("Dialog", "USDJPY"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
 
-#ifndef TEST_H
-#define TEST_H
-
-#include <QtCore/QVariant>
-#include <QtWidgets/QAction>
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QVBoxLayout>
-
-QT_BEGIN_NAMESPACE
-
-class Ui_Dialog
-{
-public:
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_7;
-    QLabel *label_6;
-    QLabel *label_4;
-    QLabel *label_8;
-    QLabel *label_9;
-    QLabel *label_10;
-    QLabel *label_5;
-    QLabel *label_11;
-    QLabel *label_27;
-    QLabel *label_12;
-    QLabel *label_28;
-    QLabel *label_13;
-    QLabel *label_14;
-    QLabel *label_15;
-    QLabel *label_16;
-    QLabel *label_17;
-    QLabel *label_18;
-    QLabel *label_19;
-    QLabel *label_20;
-    QLabel *label_21;
-    QLabel *label_26;
-    QLabel *label_25;
-    QLabel *label_24;
-    QLabel *label_23;
-    QLabel *label_22;
-
-    void setupUi(QDialog *Dialog)
-    {
-        if (Dialog->objectName().isEmpty())
-            Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->resize(336, 544);
-        verticalLayout = new QVBoxLayout(Dialog);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        label = new QLabel(Dialog);
-        label->setObjectName(QStringLiteral("label"));
-
-        verticalLayout->addWidget(label);
-
-        label_2 = new QLabel(Dialog);
-        label_2->setObjectName(QStringLiteral("label_2"));
-
-        verticalLayout->addWidget(label_2);
-
-        label_3 = new QLabel(Dialog);
-        label_3->setObjectName(QStringLiteral("label_3"));
-
-        verticalLayout->addWidget(label_3);
-
-        label_7 = new QLabel(Dialog);
-        label_7->setObjectName(QStringLiteral("label_7"));
-
-        verticalLayout->addWidget(label_7);
-
-        label_6 = new QLabel(Dialog);
-        label_6->setObjectName(QStringLiteral("label_6"));
-
-        verticalLayout->addWidget(label_6);
-
-        label_4 = new QLabel(Dialog);
-        label_4->setObjectName(QStringLiteral("label_4"));
-
-        verticalLayout->addWidget(label_4);
-
-        label_8 = new QLabel(Dialog);
-        label_8->setObjectName(QStringLiteral("label_8"));
-
-        verticalLayout->addWidget(label_8);
-
-        label_9 = new QLabel(Dialog);
-        label_9->setObjectName(QStringLiteral("label_9"));
-
-        verticalLayout->addWidget(label_9);
-
-        label_10 = new QLabel(Dialog);
-        label_10->setObjectName(QStringLiteral("label_10"));
-
-        verticalLayout->addWidget(label_10);
-
-        label_5 = new QLabel(Dialog);
-        label_5->setObjectName(QStringLiteral("label_5"));
-
-        verticalLayout->addWidget(label_5);
-
-        label_11 = new QLabel(Dialog);
-        label_11->setObjectName(QStringLiteral("label_11"));
-
-        verticalLayout->addWidget(label_11);
-
-        label_27 = new QLabel(Dialog);
-        label_27->setObjectName(QStringLiteral("label_27"));
-
-        verticalLayout->addWidget(label_27);
-
-        label_12 = new QLabel(Dialog);
-        label_12->setObjectName(QStringLiteral("label_12"));
-
-        verticalLayout->addWidget(label_12);
-
-        label_28 = new QLabel(Dialog);
-        label_28->setObjectName(QStringLiteral("label_28"));
-
-        verticalLayout->addWidget(label_28);
-
-        label_13 = new QLabel(Dialog);
-        label_13->setObjectName(QStringLiteral("label_13"));
-
-        verticalLayout->addWidget(label_13);
-
-        label_14 = new QLabel(Dialog);
-        label_14->setObjectName(QStringLiteral("label_14"));
-
-        verticalLayout->addWidget(label_14);
-
-        label_15 = new QLabel(Dialog);
-        label_15->setObjectName(QStringLiteral("label_15"));
-
-        verticalLayout->addWidget(label_15);
-
-        label_16 = new QLabel(Dialog);
-        label_16->setObjectName(QStringLiteral("label_16"));
-
-        verticalLayout->addWidget(label_16);
-
-        label_17 = new QLabel(Dialog);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        verticalLayout->addWidget(label_17);
-
-        label_18 = new QLabel(Dialog);
-        label_18->setObjectName(QStringLiteral("label_18"));
-
-        verticalLayout->addWidget(label_18);
-
-        label_19 = new QLabel(Dialog);
-        label_19->setObjectName(QStringLiteral("label_19"));
-
-        verticalLayout->addWidget(label_19);
-
-        label_20 = new QLabel(Dialog);
-        label_20->setObjectName(QStringLiteral("label_20"));
-
-        verticalLayout->addWidget(label_20);
-
-        label_21 = new QLabel(Dialog);
-        label_21->setObjectName(QStringLiteral("label_21"));
-
-        verticalLayout->addWidget(label_21);
-
-        label_26 = new QLabel(Dialog);
-        label_26->setObjectName(QStringLiteral("label_26"));
-
-        verticalLayout->addWidget(label_26);
-
-        label_25 = new QLabel(Dialog);
-        label_25->setObjectName(QStringLiteral("label_25"));
-
-        verticalLayout->addWidget(label_25);
-
-        label_24 = new QLabel(Dialog);
-        label_24->setObjectName(QStringLiteral("label_24"));
-
-        verticalLayout->addWidget(label_24);
-
-        label_23 = new QLabel(Dialog);
-        label_23->setObjectName(QStringLiteral("label_23"));
-
-        verticalLayout->addWidget(label_23);
-
-        label_22 = new QLabel(Dialog);
-        label_22->setObjectName(QStringLiteral("label_22"));
-
-        verticalLayout->addWidget(label_22);
-
-
-        retranslateUi(Dialog);
-
-        QMetaObject::connectSlotsByName(Dialog);
-    } // setupUi
-
-    void retranslateUi(QDialog *Dialog)
-    {
-        Dialog->setWindowTitle(QApplication::translate("Dialog", "Dialog", 0));
-        label->setText(QApplication::translate("Dialog", "AUDCAD", 0));
-        label_2->setText(QApplication::translate("Dialog", "AUDCHF", 0));
-        label_3->setText(QApplication::translate("Dialog", "AUDJPY", 0));
-        label_7->setText(QApplication::translate("Dialog", "AUDNZD", 0));
-        label_6->setText(QApplication::translate("Dialog", "AUDUSD", 0));
-        label_4->setText(QApplication::translate("Dialog", "CADCHF", 0));
-        label_8->setText(QApplication::translate("Dialog", "CADJPY", 0));
-        label_9->setText(QApplication::translate("Dialog", "CHFJPY", 0));
-        label_10->setText(QApplication::translate("Dialog", "EURAUD", 0));
-        label_5->setText(QApplication::translate("Dialog", "EURCAD", 0));
-        label_11->setText(QApplication::translate("Dialog", "EURCHF", 0));
-        label_27->setText(QApplication::translate("Dialog", "EURGBP", 0));
-        label_12->setText(QApplication::translate("Dialog", "EURJPY", 0));
-        label_28->setText(QApplication::translate("Dialog", "EURNZD", 0));
-        label_13->setText(QApplication::translate("Dialog", "EURUSD", 0));
-        label_14->setText(QApplication::translate("Dialog", "GBPAUD", 0));
-        label_15->setText(QApplication::translate("Dialog", "GBPCAD", 0));
-        label_16->setText(QApplication::translate("Dialog", "GBPCHF", 0));
-        label_17->setText(QApplication::translate("Dialog", "GBPJPY", 0));
-        label_18->setText(QApplication::translate("Dialog", "GBPNZD", 0));
-        label_19->setText(QApplication::translate("Dialog", "GBPUSD", 0));
-        label_20->setText(QApplication::translate("Dialog", "NZDCAD", 0));
-        label_21->setText(QApplication::translate("Dialog", "NZDCHF", 0));
-        label_26->setText(QApplication::translate("Dialog", "NZDJPY", 0));
-        label_25->setText(QApplication::translate("Dialog", "NZDUSD", 0));
-        label_24->setText(QApplication::translate("Dialog", "USDCAD", 0));
-        label_23->setText(QApplication::translate("Dialog", "USDCHF", 0));
-        label_22->setText(QApplication::translate("Dialog", "USDJPY", 0));
-    } // retranslateUi
-
-};
-
-namespace Ui {
-    class Dialog: public Ui_Dialog {};
-} // namespace Ui
-
-QT_END_NAMESPACE
-
-#endif // TEST_H

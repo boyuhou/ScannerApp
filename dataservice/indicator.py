@@ -20,10 +20,12 @@ def numpy_ewma_vectorized(data, window):
     out = offset + cumsums * scale_arr[::-1]
     return out[-1]
 
+
 TSI_PERIOD = 200
 
+
 class Ticker:
-    def __init__(self, ticker):
+    def __init__(self, ticker : str):
         self.ticker = ticker
         self.close_price = {
             1: collections.deque(maxlen=TSI_PERIOD),
@@ -98,30 +100,7 @@ class Ticker:
             240: collections.deque(maxlen=TSI_PERIOD),
         }
 
-        self.price_dict = {
-            1: pd.DataFrame(columns=['open', 'high', 'low', 'close']),
-            5: pd.DataFrame(columns=['open', 'high', 'low', 'close']),
-            15: pd.DataFrame(columns=['open', 'high', 'low', 'close']),
-            60: pd.DataFrame(columns=['open', 'high', 'low', 'close']),
-            240: pd.DataFrame(columns=['open', 'high', 'low', 'close']),
-        }
-        self.indicator_dict = {
-            1: pd.DataFrame(columns=['ema8', 'ema21', 'ema50', 'adx14', 'range20', 'tsi']),
-            5: pd.DataFrame(columns=['ema8', 'ema21', 'ema50', 'adx14', 'range20', 'tsi']),
-            15: pd.DataFrame(columns=['ema8', 'ema21', 'ema50', 'adx14', 'range20', 'tsi']),
-            60: pd.DataFrame(columns=['ema8', 'ema21', 'ema50', 'adx14', 'range20', 'tsi']),
-            240: pd.DataFrame(columns=['ema8', 'ema21', 'ema50', 'adx14', 'range20', 'tsi']),
-        }
-
-    def insert_new_price(self, time_interval, open_p, high_p, low_p, close_p, quote_time):
-        new_df = pd.DataFrame({
-            'open': open_p,
-            'high': high_p,
-            'low': low_p,
-            'close': close_p,
-        }, index=[pd.to_datetime(quote_time)])
-        self.price_dict[time_interval] = self.price_dict[time_interval].append(new_df)
-
+    def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float, quote_time: str):
         self.close_price[time_interval].append(close_p)
         self.open_price[time_interval].append(open_p)
         self.low_price[time_interval].append(low_p)
@@ -137,21 +116,21 @@ class Ticker:
         self._update_price_change(interval)
         self._update_tsi(interval)
 
-        if self.quote_time[interval][-1] >= '2018-06-01 16:40:00':
-            print(self.quote_time[interval][-1] + '  EMA08:' + str(
-                numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 8)))
-            print(self.quote_time[interval][-1] + '  EMA21' + str(
-                numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 21)))
-            print(self.quote_time[interval][-1] + '  EMA50' + str(
-                numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 50)))
+        # if self.quote_time[interval][-1] >= '2018-06-01 16:40:00':
+        #     print(self.quote_time[interval][-1] + '  EMA08:' + str(
+        #         numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 8)))
+        #     print(self.quote_time[interval][-1] + '  EMA21' + str(
+        #         numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 21)))
+        #     print(self.quote_time[interval][-1] + '  EMA50' + str(
+        #         numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 50)))
 
-    def _update_price_change(self, interval):
+    def _update_price_change(self, interval: int):
         if len(self.close_price[interval]) < 2:
             self.price_change[interval].append(np.nan)
         else:
             self.price_change[interval].append((self.close_price[interval][-1] - self.close_price[interval][-2]) / self.close_price[interval][-2])
 
-    def _update_tsi(self, interval):
+    def _update_tsi(self, interval: int):
         if len(self.price_change[interval]) < 200:
             self.trend_smooth_indicator[interval].append(np.nan)
         else:
@@ -160,7 +139,7 @@ class Ticker:
             std = np.std(close_array)
             self.trend_smooth_indicator[interval].append(mean / std * 10.)
 
-    def _update_ema(self, interval, ema_window):
+    def _update_ema(self, interval: int, ema_window):
         if len(self.close_price[interval]) < ema_window:
             self.ema[ema_window][interval].append(
                 numpy_ewma_vectorized(np.asarray(self.close_price[interval]), ema_window))
