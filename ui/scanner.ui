@@ -6,207 +6,403 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>336</width>
+    <width>417</width>
     <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>AUDCAD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>AUDCHF</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>AUDJPY</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>AUDNZD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>AUDUSD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>CADCHF</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>CADJPY</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>CHFJPY</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>EURAUD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>EURCAD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_11">
-     <property name="text">
-      <string>EURCHF</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_27">
-     <property name="text">
-      <string>EURGBP</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_12">
-     <property name="text">
-      <string>EURJPY</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_28">
-     <property name="text">
-      <string>EURNZD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_13">
-     <property name="text">
-      <string>EURUSD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_14">
-     <property name="text">
-      <string>GBPAUD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_15">
-     <property name="text">
-      <string>GBPCAD</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="label_16">
-     <property name="text">
-      <string>GBPCHF</string>
-     </property>
-    </widget>
-   </item>
-   <item>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="18" column="0">
     <widget class="QLabel" name="label_17">
      <property name="text">
       <string>GBPJPY</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="19" column="0">
     <widget class="QLabel" name="label_18">
      <property name="text">
       <string>GBPNZD</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="label_28">
+     <property name="text">
+      <string>EURNZD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>AUDUSD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>EURCAD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>CADJPY</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>EURCHF</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>AUDJPY</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>AUDNZD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>CADCHF</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>CHFJPY</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>EURJPY</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="0">
+    <widget class="QLabel" name="label_16">
+     <property name="text">
+      <string>GBPCHF</string>
+     </property>
+    </widget>
+   </item>
+   <item row="20" column="0">
     <widget class="QLabel" name="label_19">
      <property name="text">
       <string>GBPUSD</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="21" column="0">
     <widget class="QLabel" name="label_20">
      <property name="text">
       <string>NZDCAD</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="22" column="0">
     <widget class="QLabel" name="label_21">
      <property name="text">
       <string>NZDCHF</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>AUDCAD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>EURAUD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>EURUSD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="0">
+    <widget class="QLabel" name="label_15">
+     <property name="text">
+      <string>GBPCAD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="0">
     <widget class="QLabel" name="label_26">
      <property name="text">
       <string>NZDJPY</string>
      </property>
     </widget>
    </item>
-   <item>
-    <widget class="QLabel" name="label_25">
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>NZDUSD</string>
+      <string>AUDCHF</string>
      </property>
     </widget>
    </item>
-   <item>
-    <widget class="QLabel" name="label_24">
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_27">
      <property name="text">
-      <string>USDCAD</string>
+      <string>EURGBP</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="15" column="0">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>GBPAUD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="26" column="0">
     <widget class="QLabel" name="label_23">
      <property name="text">
       <string>USDCHF</string>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="25" column="0">
+    <widget class="QLabel" name="label_24">
+     <property name="text">
+      <string>USDCAD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="24" column="0">
+    <widget class="QLabel" name="label_25">
+     <property name="text">
+      <string>NZDUSD</string>
+     </property>
+    </widget>
+   </item>
+   <item row="27" column="0">
     <widget class="QLabel" name="label_22">
      <property name="text">
       <string>USDJPY</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLabel" name="AUDCAD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="AUDCHF_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="AUDJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLabel" name="AUDNZD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLabel" name="AUDUSD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLabel" name="CADCHF_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLabel" name="CADJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLabel" name="CHFJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QLabel" name="EURAUD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLabel" name="EURCAD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QLabel" name="EURCHF_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QLabel" name="EURGBP_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLabel" name="EURJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="1">
+    <widget class="QLabel" name="EURNZD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1">
+    <widget class="QLabel" name="EURUSD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="1">
+    <widget class="QLabel" name="GBPAUD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="1">
+    <widget class="QLabel" name="GBPCAD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="1">
+    <widget class="QLabel" name="GBPCHF_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="1">
+    <widget class="QLabel" name="GBPJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="19" column="1">
+    <widget class="QLabel" name="GBPNZD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="20" column="1">
+    <widget class="QLabel" name="GBPUSD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="21" column="1">
+    <widget class="QLabel" name="NZDCAD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="22" column="1">
+    <widget class="QLabel" name="NZDCHF_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="23" column="1">
+    <widget class="QLabel" name="NZDJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="24" column="1">
+    <widget class="QLabel" name="NZDUSD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="25" column="1">
+    <widget class="QLabel" name="USDCAD_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="26" column="1">
+    <widget class="QLabel" name="USDCHF_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="27" column="1">
+    <widget class="QLabel" name="USDJPY_PRICE">
+     <property name="text">
+      <string>TextLabel</string>
      </property>
     </widget>
    </item>

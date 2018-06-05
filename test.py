@@ -5,8 +5,12 @@ import cherrypy
 ticker = 'USDCAD.FXCM'
 
 
+def callback(bar_data):
+    pass
+
+
 bar_conn = iq.BarConn(name='test live interval bars')
-bar_listener = QuoteListener('customized bar listener')
+bar_listener = QuoteListener('customized bar listener', callback)
 bar_conn.add_listener(bar_listener)
 
 

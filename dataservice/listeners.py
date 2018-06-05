@@ -1,11 +1,13 @@
+from typing import Callable
+
 import numpy as np
-import collections, itertools
-from dataservice.indicator import Ticker, numpy_ewma_vectorized
+
+from dataservice.indicator import Ticker
 from pyiqfeed.listeners import VerboseIQFeedListener
 
 
 class QuoteListener(VerboseIQFeedListener):
-    def __init__(self, name: str):
+    def __init__(self, name: str, callback: Callable):
         super().__init__(name)
         self.data_dict = {
             'AUDCAD.FXCM': Ticker('AUDCAD.FXCM'),
@@ -37,10 +39,12 @@ class QuoteListener(VerboseIQFeedListener):
             'USDCHF.FXCM': Ticker('USDCHF.FXCM'),
             'USDJPY.FXCM': Ticker('USDJPY.FXCM'),
         }
+        self.callback = callback
 
     def process_latest_bar_update(self, bar_data: np.array) -> None:
         print("%s: Process latest bar update:" % self._name)
         print(bar_data)
+        self.callback(bar_data)
         # min_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
         # ticker = bar_data['symbol'][0]
         # close_price = bar_data['close_p'][0]
