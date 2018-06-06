@@ -25,7 +25,7 @@ TSI_PERIOD = 200
 
 
 class Ticker:
-    def __init__(self, ticker : str):
+    def __init__(self, ticker: str):
         self.ticker = ticker
         self.close_price = {
             1: collections.deque(maxlen=TSI_PERIOD),

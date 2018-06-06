@@ -11,7 +11,7 @@ that should be available when requested, provide the data
 requested as the return value of the function that requests the
 data. Other XXXConn classes (like QuoteConn) which provide streaming
 data, require you to implement a class that derives from one of the
-Listeners in listeners.py and provide the data by calling lookbacks
+Listeners in listener.py and provide the data by calling lookbacks
 in those classes as it comes in.
 
 All XXXConn classes send status messages to listener classes. While

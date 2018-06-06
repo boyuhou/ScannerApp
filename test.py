@@ -1,5 +1,5 @@
 import pyiqfeed as iq
-from dataservice.listeners import QuoteListener
+from dataservice.listener import QuoteListener
 import cherrypy
 
 ticker = 'USDCAD.FXCM'
