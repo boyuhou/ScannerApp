@@ -221,196 +221,196 @@
             <item row="1" column="1">
                 <widget class="QLabel" name="range20min5_AUDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="2" column="1">
                 <widget class="QLabel" name="range20min5_AUDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="3" column="1">
                 <widget class="QLabel" name="range20min5_AUDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="4" column="1">
                 <widget class="QLabel" name="range20min5_AUDNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="5" column="1">
                 <widget class="QLabel" name="range20min5_AUDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="6" column="1">
                 <widget class="QLabel" name="range20min5_CADCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="7" column="1">
                 <widget class="QLabel" name="range20min5_CADJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="8" column="1">
                 <widget class="QLabel" name="range20min5_CHFJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="9" column="1">
                 <widget class="QLabel" name="range20min5_EURAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="10" column="1">
                 <widget class="QLabel" name="range20min5_EURCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="11" column="1">
                 <widget class="QLabel" name="range20min5_EURCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="12" column="1">
                 <widget class="QLabel" name="range20min5_EURGBP">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="13" column="1">
                 <widget class="QLabel" name="range20min5_EURJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="14" column="1">
                 <widget class="QLabel" name="range20min5_EURNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="15" column="1">
                 <widget class="QLabel" name="range20min5_EURUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="16" column="1">
                 <widget class="QLabel" name="range20min5_GBPAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="17" column="1">
                 <widget class="QLabel" name="range20min5_GBPCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="18" column="1">
                 <widget class="QLabel" name="range20min5_GBPCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="19" column="1">
                 <widget class="QLabel" name="range20min5_GBPJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="20" column="1">
                 <widget class="QLabel" name="range20min5_GBPNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="21" column="1">
                 <widget class="QLabel" name="range20min5_GBPUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="22" column="1">
                 <widget class="QLabel" name="range20min5_NZDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="23" column="1">
                 <widget class="QLabel" name="range20min5_NZDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="24" column="1">
                 <widget class="QLabel" name="range20min5_NZDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="25" column="1">
                 <widget class="QLabel" name="range20min5_NZDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="26" column="1">
                 <widget class="QLabel" name="range20min5_USDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="27" column="1">
                 <widget class="QLabel" name="range20min5_USDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="28" column="1">
                 <widget class="QLabel" name="range20min5_USDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
@@ -424,196 +424,196 @@
             <item row="1" column="2">
                 <widget class="QLabel" name="range20min15_AUDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="2" column="2">
                 <widget class="QLabel" name="range20min15_AUDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="3" column="2">
                 <widget class="QLabel" name="range20min15_AUDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="4" column="2">
                 <widget class="QLabel" name="range20min15_AUDNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="5" column="2">
                 <widget class="QLabel" name="range20min15_AUDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="6" column="2">
                 <widget class="QLabel" name="range20min15_CADCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="7" column="2">
                 <widget class="QLabel" name="range20min15_CADJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="8" column="2">
                 <widget class="QLabel" name="range20min15_CHFJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="9" column="2">
                 <widget class="QLabel" name="range20min15_EURAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="10" column="2">
                 <widget class="QLabel" name="range20min15_EURCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="11" column="2">
                 <widget class="QLabel" name="range20min15_EURCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="12" column="2">
                 <widget class="QLabel" name="range20min15_EURGBP">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="13" column="2">
                 <widget class="QLabel" name="range20min15_EURJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="14" column="2">
                 <widget class="QLabel" name="range20min15_EURNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="15" column="2">
                 <widget class="QLabel" name="range20min15_EURUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="16" column="2">
                 <widget class="QLabel" name="range20min15_GBPAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="17" column="2">
                 <widget class="QLabel" name="range20min15_GBPCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="18" column="2">
                 <widget class="QLabel" name="range20min15_GBPCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="19" column="2">
                 <widget class="QLabel" name="range20min15_GBPJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="20" column="2">
                 <widget class="QLabel" name="range20min15_GBPNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="21" column="2">
                 <widget class="QLabel" name="range20min15_GBPUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="22" column="2">
                 <widget class="QLabel" name="range20min15_NZDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="23" column="2">
                 <widget class="QLabel" name="range20min15_NZDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="24" column="2">
                 <widget class="QLabel" name="range20min15_NZDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="25" column="2">
                 <widget class="QLabel" name="range20min15_NZDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="26" column="2">
                 <widget class="QLabel" name="range20min15_USDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="27" column="2">
                 <widget class="QLabel" name="range20min15_USDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="28" column="2">
                 <widget class="QLabel" name="range20min15_USDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
@@ -628,196 +628,196 @@
             <item row="1" column="3">
                 <widget class="QLabel" name="tsi5_AUDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="2" column="3">
                 <widget class="QLabel" name="tsi5_AUDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="3" column="3">
                 <widget class="QLabel" name="tsi5_AUDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="4" column="3">
                 <widget class="QLabel" name="tsi5_AUDNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="5" column="3">
                 <widget class="QLabel" name="tsi5_AUDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="6" column="3">
                 <widget class="QLabel" name="tsi5_CADCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="7" column="3">
                 <widget class="QLabel" name="tsi5_CADJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="8" column="3">
                 <widget class="QLabel" name="tsi5_CHFJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="9" column="3">
                 <widget class="QLabel" name="tsi5_EURAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="10" column="3">
                 <widget class="QLabel" name="tsi5_EURCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="11" column="3">
                 <widget class="QLabel" name="tsi5_EURCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="12" column="3">
                 <widget class="QLabel" name="tsi5_EURGBP">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="13" column="3">
                 <widget class="QLabel" name="tsi5_EURJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="14" column="3">
                 <widget class="QLabel" name="tsi5_EURNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="15" column="3">
                 <widget class="QLabel" name="tsi5_EURUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="16" column="3">
                 <widget class="QLabel" name="tsi5_GBPAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="17" column="3">
                 <widget class="QLabel" name="tsi5_GBPCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="18" column="3">
                 <widget class="QLabel" name="tsi5_GBPCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="19" column="3">
                 <widget class="QLabel" name="tsi5_GBPJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="20" column="3">
                 <widget class="QLabel" name="tsi5_GBPNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="21" column="3">
                 <widget class="QLabel" name="tsi5_GBPUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="22" column="3">
                 <widget class="QLabel" name="tsi5_NZDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="23" column="3">
                 <widget class="QLabel" name="tsi5_NZDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="24" column="3">
                 <widget class="QLabel" name="tsi5_NZDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="25" column="3">
                 <widget class="QLabel" name="tsi5_NZDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="26" column="3">
                 <widget class="QLabel" name="tsi5_USDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="27" column="3">
                 <widget class="QLabel" name="tsi5_USDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="28" column="3">
                 <widget class="QLabel" name="tsi5_USDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
@@ -832,196 +832,196 @@
             <item row="1" column="4">
                 <widget class="QLabel" name="tsi15_AUDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="2" column="4">
                 <widget class="QLabel" name="tsi15_AUDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="3" column="4">
                 <widget class="QLabel" name="tsi15_AUDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="4" column="4">
                 <widget class="QLabel" name="tsi15_AUDNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="5" column="4">
                 <widget class="QLabel" name="tsi15_AUDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="6" column="4">
                 <widget class="QLabel" name="tsi15_CADCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="7" column="4">
                 <widget class="QLabel" name="tsi15_CADJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="8" column="4">
                 <widget class="QLabel" name="tsi15_CHFJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="9" column="4">
                 <widget class="QLabel" name="tsi15_EURAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="10" column="4">
                 <widget class="QLabel" name="tsi15_EURCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="11" column="4">
                 <widget class="QLabel" name="tsi15_EURCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="12" column="4">
                 <widget class="QLabel" name="tsi15_EURGBP">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="13" column="4">
                 <widget class="QLabel" name="tsi15_EURJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="14" column="4">
                 <widget class="QLabel" name="tsi15_EURNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="15" column="4">
                 <widget class="QLabel" name="tsi15_EURUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="16" column="4">
                 <widget class="QLabel" name="tsi15_GBPAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="17" column="4">
                 <widget class="QLabel" name="tsi15_GBPCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="18" column="4">
                 <widget class="QLabel" name="tsi15_GBPCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="19" column="4">
                 <widget class="QLabel" name="tsi15_GBPJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="20" column="4">
                 <widget class="QLabel" name="tsi15_GBPNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="21" column="4">
                 <widget class="QLabel" name="tsi15_GBPUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="22" column="4">
                 <widget class="QLabel" name="tsi15_NZDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="23" column="4">
                 <widget class="QLabel" name="tsi15_NZDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="24" column="4">
                 <widget class="QLabel" name="tsi15_NZDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="25" column="4">
                 <widget class="QLabel" name="tsi15_NZDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="26" column="4">
                 <widget class="QLabel" name="tsi15_USDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="27" column="4">
                 <widget class="QLabel" name="tsi15_USDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="28" column="4">
                 <widget class="QLabel" name="tsi15_USDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
@@ -1036,196 +1036,196 @@
             <item row="1" column="5">
                 <widget class="QLabel" name="tsi60_AUDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="2" column="5">
                 <widget class="QLabel" name="tsi60_AUDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="3" column="5">
                 <widget class="QLabel" name="tsi60_AUDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="4" column="5">
                 <widget class="QLabel" name="tsi60_AUDNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="5" column="5">
                 <widget class="QLabel" name="tsi60_AUDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="6" column="5">
                 <widget class="QLabel" name="tsi60_CADCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="7" column="5">
                 <widget class="QLabel" name="tsi60_CADJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="8" column="5">
                 <widget class="QLabel" name="tsi60_CHFJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="9" column="5">
                 <widget class="QLabel" name="tsi60_EURAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="10" column="5">
                 <widget class="QLabel" name="tsi60_EURCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="11" column="5">
                 <widget class="QLabel" name="tsi60_EURCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="12" column="5">
                 <widget class="QLabel" name="tsi60_EURGBP">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="13" column="5">
                 <widget class="QLabel" name="tsi60_EURJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="14" column="5">
                 <widget class="QLabel" name="tsi60_EURNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="15" column="5">
                 <widget class="QLabel" name="tsi60_EURUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="16" column="5">
                 <widget class="QLabel" name="tsi60_GBPAUD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="17" column="5">
                 <widget class="QLabel" name="tsi60_GBPCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="18" column="5">
                 <widget class="QLabel" name="tsi60_GBPCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="19" column="5">
                 <widget class="QLabel" name="tsi60_GBPJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="20" column="5">
                 <widget class="QLabel" name="tsi60_GBPNZD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="21" column="5">
                 <widget class="QLabel" name="tsi60_GBPUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="22" column="5">
                 <widget class="QLabel" name="tsi60_NZDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="23" column="5">
                 <widget class="QLabel" name="tsi60_NZDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="24" column="5">
                 <widget class="QLabel" name="tsi60_NZDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="25" column="5">
                 <widget class="QLabel" name="tsi60_NZDUSD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="26" column="5">
                 <widget class="QLabel" name="tsi60_USDCAD">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="27" column="5">
                 <widget class="QLabel" name="tsi60_USDCHF">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>
             <item row="28" column="5">
                 <widget class="QLabel" name="tsi60_USDJPY">
                     <property name="text">
-                        <string>TextLabel</string>
+                        <string>...</string>
                     </property>
                 </widget>
             </item>

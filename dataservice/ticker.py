@@ -8,7 +8,8 @@ TSI_PERIOD = 200
 
 class Ticker:
     def __init__(self, name: str):
-        self.name = name
+        self.full_name = name
+        self.name = name.split(".")[0]
         self.close_price = {
             1: collections.deque(maxlen=TSI_PERIOD),
             5: collections.deque(maxlen=TSI_PERIOD),
@@ -102,7 +103,7 @@ class Ticker:
         # self._update_ema(interval, ema_window=50)
 
         self._update_price_change(interval)
-        # self._update_tsi(interval)
+        self._update_tsi(interval)
         self._update_range20(interval)
 
         # if self.quote_time[interval][-1] >= '2018-06-01 16:40:00':
@@ -117,12 +118,10 @@ class Ticker:
         if interval != 5 and interval != 15:
             return
         if (len(self.high_price[interval]) < 20) or (len(self.low_price[interval]) < 20):
-            return
-
-        interval_range = max(list(self.high_price[interval])[-20:]) - min(list(self.low_price[interval])[-20:])
-        self.range[interval].append(interval_range)
-
-        return
+            self.range[interval].append(np.nan)
+        else:
+            interval_range = max(list(self.high_price[interval])[-20:]) - min(list(self.low_price[interval])[-20:])
+            self.range[interval].append(interval_range)
 
     def _update_price_change(self, interval: int):
         if len(self.close_price[interval]) < 2:

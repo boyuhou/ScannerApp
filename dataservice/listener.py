@@ -39,22 +39,23 @@ class QuoteListener(SilentBarListener):
         pass
 
     def _update_gui_5min(self, ticker: Ticker) -> None:
-        full_name = ticker.name.split(".")[0]
-        range_label_name = "range20min5_" + full_name
-        range_label = getattr(self.ui, range_label_name)
-        range_label.setText(self._str(ticker.range[5][-1]))
+        self._update_text("range20min5_", ticker.name, ticker.range[5][-1])
+        self._update_text("tsi5_", ticker.name, ticker.trend_smooth_indicator[5][-1])
 
     def _update_gui_15min(self, ticker: Ticker) -> None:
-        full_name = ticker.name.split(".")[0]
-        range_label_name = "range20min15_" + full_name
-        range_label = getattr(self.ui, range_label_name)
-        range_label.setText(self._str(ticker.range[15][-1]))
+        self._update_text("range20min15_", ticker.name, ticker.range[15][-1])
+        self._update_text("tsi15_", ticker.name, ticker.trend_smooth_indicator[15][-1])
 
     def _update_gui_60min(self, ticker: Ticker) -> None:
-        pass
+        self._update_text("tsi60_", ticker.name, ticker.trend_smooth_indicator[60][-1])
 
     def _update_gui_240min(self, ticker: Ticker) -> None:
         pass
+
+    def _update_text(self, prefix: str, ticker_name: str, value: float):
+        label_name = prefix + ticker_name
+        label = getattr(self.ui, label_name)
+        label.setText(self._str(value))
 
     """
     Listener callbacks
@@ -85,15 +86,16 @@ class QuoteListener(SilentBarListener):
             print("Process history bar: ", bar_data)
 
         time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
-        ticker = bar_data['symbol'][0]
+        name = bar_data['symbol'][0]
         open_price = bar_data['open_p'][0]
         high_price = bar_data['high_p'][0]
         low_price = bar_data['low_p'][0]
         close_price = bar_data['close_p'][0]
         quote_time = bar_data['datetime'][0]
-
-        self.data_dict[ticker].insert_new_price(time_interval, open_price, high_price, low_price, close_price,
-                                                quote_time)
+        ticker = self.data_dict[name]
+        
+        ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+        ticker.update_indicator(time_interval)
 
     @staticmethod
     def _str(number: float) -> str:
