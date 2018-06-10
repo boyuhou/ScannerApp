@@ -81,6 +81,10 @@ class Ticker:
             60: collections.deque(maxlen=TSI_PERIOD),
             240: collections.deque(maxlen=TSI_PERIOD),
         }
+        self.range = {
+            5: collections.deque(maxlen=TSI_PERIOD),
+            15: collections.deque(maxlen=TSI_PERIOD)
+        }
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float,
                          quote_time: str) -> None:
@@ -93,12 +97,13 @@ class Ticker:
 
     def update_indicator(self, interval) -> None:
         multiplier = 100.0 if 'JPY' in self.name else 10000.0
-        self._update_ema(interval, ema_window=8)
-        self._update_ema(interval, ema_window=21)
-        self._update_ema(interval, ema_window=50)
+        # self._update_ema(interval, ema_window=8)
+        # self._update_ema(interval, ema_window=21)
+        # self._update_ema(interval, ema_window=50)
 
         self._update_price_change(interval)
-        self._update_tsi(interval)
+        # self._update_tsi(interval)
+        self._update_range20(interval)
 
         # if self.quote_time[interval][-1] >= '2018-06-01 16:40:00':
         #     print(self.quote_time[interval][-1] + '  EMA08:' + str(
@@ -107,6 +112,17 @@ class Ticker:
         #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 21)))
         #     print(self.quote_time[interval][-1] + '  EMA50' + str(
         #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 50)))
+
+    def _update_range20(self, interval: int) -> None:
+        if interval != 5 and interval != 15:
+            return
+        if (len(self.high_price[interval]) < 20) or (len(self.low_price[interval]) < 20):
+            return
+
+        interval_range = max(list(self.high_price[interval])[-20:]) - min(list(self.low_price[interval])[-20:])
+        self.range[interval].append(interval_range)
+
+        return
 
     def _update_price_change(self, interval: int):
         if len(self.close_price[interval]) < 2:

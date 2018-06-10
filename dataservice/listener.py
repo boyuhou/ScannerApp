@@ -6,7 +6,6 @@ from ui.test import Ui_Dialog
 
 
 class QuoteListener(SilentBarListener):
-
     """
     Processor is a adapter between ui and tickers
 
@@ -21,22 +20,61 @@ class QuoteListener(SilentBarListener):
         self.data_dict = {}
         for ticker in tickers:
             self.data_dict[ticker] = Ticker(ticker)
+        self.gui_callbacks = {
+            1: self._update_gui_1min,
+            5: self._update_gui_5min,
+            15: self._update_gui_15min,
+            60: self._update_gui_60min,
+            240: self._update_gui_240min
+        }
+
+    """
+    GUI callbacks
+    """
+
+    def update_gui(self, ticker: Ticker, interval: int) -> None:
+        self.gui_callbacks[interval](ticker)
+
+    def _update_gui_1min(self, ticker: Ticker) -> None:
+        pass
+
+    def _update_gui_5min(self, ticker: Ticker) -> None:
+        full_name = ticker.name.split(".")[0]
+        range_label_name = "range20min5_" + full_name
+        range_label = getattr(self.ui, range_label_name)
+        range_label.setText(self._str(ticker.range[5][-1]))
+
+    def _update_gui_15min(self, ticker: Ticker) -> None:
+        full_name = ticker.name.split(".")[0]
+        range_label_name = "range20min15_" + full_name
+        range_label = getattr(self.ui, range_label_name)
+        range_label.setText(self._str(ticker.range[15][-1]))
+
+    def _update_gui_60min(self, ticker: Ticker) -> None:
+        pass
+
+    def _update_gui_240min(self, ticker: Ticker) -> None:
+        pass
 
     """
     Listener callbacks
     """
+
     def process_latest_bar_update(self, bar_data: np.array) -> None:
         if self.is_debug:
             print("Process latest bar update: ", bar_data)
         time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
-        ticker = bar_data['symbol'][0]
+        name = bar_data['symbol'][0]
         open_price = bar_data['open_p'][0]
         high_price = bar_data['high_p'][0]
         low_price = bar_data['low_p'][0]
         close_price = bar_data['close_p'][0]
         quote_time = bar_data['datetime'][0]
-        self.data_dict[ticker].insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
-        self.data_dict[ticker].update_indicator(time_interval)
+        ticker = self.data_dict[name]
+
+        ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+        ticker.update_indicator(time_interval)
+        self.update_gui(ticker, time_interval)
 
     def process_live_bar(self, bar_data: np.array) -> None:
         if self.is_debug:
@@ -54,4 +92,9 @@ class QuoteListener(SilentBarListener):
         close_price = bar_data['close_p'][0]
         quote_time = bar_data['datetime'][0]
 
-        self.data_dict[ticker].insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+        self.data_dict[ticker].insert_new_price(time_interval, open_price, high_price, low_price, close_price,
+                                                quote_time)
+
+    @staticmethod
+    def _str(number: float) -> str:
+        return '{number:.{digits}f}'.format(number=number, digits=4)
