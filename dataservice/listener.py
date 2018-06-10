@@ -1,6 +1,6 @@
 import numpy as np
 
-from dataservice.indicator import Ticker
+from dataservice.ticker import Ticker
 from pyiqfeed.listeners import SilentBarListener
 from ui.test import Ui_Dialog
 
@@ -28,6 +28,15 @@ class QuoteListener(SilentBarListener):
     def process_latest_bar_update(self, bar_data: np.array) -> None:
         if self.is_debug:
             print("Process latest bar update: ", bar_data)
+        time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
+        ticker = bar_data['symbol'][0]
+        open_price = bar_data['open_p'][0]
+        high_price = bar_data['high_p'][0]
+        low_price = bar_data['low_p'][0]
+        close_price = bar_data['close_p'][0]
+        quote_time = bar_data['datetime'][0]
+        self.data_dict[ticker].insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+        self.data_dict[ticker].update_indicator(time_interval)
 
     def process_live_bar(self, bar_data: np.array) -> None:
         if self.is_debug:
@@ -46,5 +55,3 @@ class QuoteListener(SilentBarListener):
         quote_time = bar_data['datetime'][0]
 
         self.data_dict[ticker].insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
-        self.data_dict[ticker].update_indicator(time_interval)
-

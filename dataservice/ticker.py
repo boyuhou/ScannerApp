@@ -1,32 +1,14 @@
 import collections
+
 import numpy as np
 import pandas as pd
-
-
-def numpy_ewma_vectorized(data, window):
-    alpha = 2 / (window + 1.0)
-    alpha_rev = 1 - alpha
-
-    scale = 1 / alpha_rev
-    n = data.shape[0]
-
-    r = np.arange(n)
-    scale_arr = scale ** r
-    offset = data[0] * alpha_rev ** (r + 1)
-    pw0 = alpha * alpha_rev ** (n - 1)
-
-    mult = data * pw0 * scale_arr
-    cumsums = mult.cumsum()
-    out = offset + cumsums * scale_arr[::-1]
-    return out[-1]
-
 
 TSI_PERIOD = 200
 
 
 class Ticker:
-    def __init__(self, ticker: str):
-        self.ticker = ticker
+    def __init__(self, name: str):
+        self.name = name
         self.close_price = {
             1: collections.deque(maxlen=TSI_PERIOD),
             5: collections.deque(maxlen=TSI_PERIOD),
@@ -100,15 +82,17 @@ class Ticker:
             240: collections.deque(maxlen=TSI_PERIOD),
         }
 
-    def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float, quote_time: str):
+    def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float,
+                         quote_time: str) -> None:
         self.close_price[time_interval].append(close_p)
         self.open_price[time_interval].append(open_p)
         self.low_price[time_interval].append(low_p)
         self.high_price[time_interval].append(high_p)
-        self.quote_time[time_interval].append(quote_time)
+        if self.quote_time[time_interval] != quote_time:
+            self.quote_time[time_interval].append(quote_time)
 
-    def update_indicator(self, interval):
-        multiplier = 100.0 if 'JPY' in self.ticker else 10000.0
+    def update_indicator(self, interval) -> None:
+        multiplier = 100.0 if 'JPY' in self.name else 10000.0
         self._update_ema(interval, ema_window=8)
         self._update_ema(interval, ema_window=21)
         self._update_ema(interval, ema_window=50)
@@ -118,17 +102,18 @@ class Ticker:
 
         # if self.quote_time[interval][-1] >= '2018-06-01 16:40:00':
         #     print(self.quote_time[interval][-1] + '  EMA08:' + str(
-        #         numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 8)))
+        #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 8)))
         #     print(self.quote_time[interval][-1] + '  EMA21' + str(
-        #         numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 21)))
+        #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 21)))
         #     print(self.quote_time[interval][-1] + '  EMA50' + str(
-        #         numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 50)))
+        #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 50)))
 
     def _update_price_change(self, interval: int):
         if len(self.close_price[interval]) < 2:
             self.price_change[interval].append(np.nan)
         else:
-            self.price_change[interval].append((self.close_price[interval][-1] - self.close_price[interval][-2]) / self.close_price[interval][-2])
+            self.price_change[interval].append(
+                (self.close_price[interval][-1] - self.close_price[interval][-2]) / self.close_price[interval][-2])
 
     def _update_tsi(self, interval: int):
         if len(self.price_change[interval]) < 200:
@@ -139,10 +124,10 @@ class Ticker:
             std = np.std(close_array)
             self.trend_smooth_indicator[interval].append(mean / std * 10.)
 
-    def _update_ema(self, interval: int, ema_window):
+    def _update_ema(self, interval: int, ema_window: int) -> None:
         if len(self.close_price[interval]) < ema_window:
             self.ema[ema_window][interval].append(
-                numpy_ewma_vectorized(np.asarray(self.close_price[interval]), ema_window))
+                _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), ema_window))
         else:
             self.ema[ema_window][interval].append(
                 2. / (ema_window + 1) * (self.close_price[interval][-1] - self.ema[ema_window][interval][-1]) +
@@ -191,3 +176,21 @@ def _average_directional_movement_index(df, n):
     adx['dx' + str(n)] = 100 * adx['didiff' + str(n)] / adx['disum' + str(n)]
     adx['adx' + str(n)] = _get_adx_sum(adx['dx' + str(n)], n)
     return adx['adx' + str(n)]
+
+
+def _numpy_ewma_vectorized(data, window):
+    alpha = 2 / (window + 1.0)
+    alpha_rev = 1 - alpha
+
+    scale = 1 / alpha_rev
+    n = data.shape[0]
+
+    r = np.arange(n)
+    scale_arr = scale ** r
+    offset = data[0] * alpha_rev ** (r + 1)
+    pw0 = alpha * alpha_rev ** (n - 1)
+
+    mult = data * pw0 * scale_arr
+    cumsums = mult.cumsum()
+    out = offset + cumsums * scale_arr[::-1]
+    return out[-1]
