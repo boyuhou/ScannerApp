@@ -98,21 +98,16 @@ class Ticker:
 
     def update_indicator(self, interval) -> None:
         multiplier = 100.0 if 'JPY' in self.name else 10000.0
-        # self._update_ema(interval, ema_window=8)
-        # self._update_ema(interval, ema_window=21)
-        # self._update_ema(interval, ema_window=50)
 
+        self._update_all_ema(interval)
         self._update_price_change(interval)
         self._update_tsi(interval)
         self._update_range20(interval)
 
-        # if self.quote_time[interval][-1] >= '2018-06-01 16:40:00':
-        #     print(self.quote_time[interval][-1] + '  EMA08:' + str(
-        #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 8)))
-        #     print(self.quote_time[interval][-1] + '  EMA21' + str(
-        #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 21)))
-        #     print(self.quote_time[interval][-1] + '  EMA50' + str(
-        #         _numpy_ewma_vectorized(np.asarray(self.close_price[interval]), 50)))
+    def _update_all_ema(self, interval: int) -> None:
+        self._update_ema(interval, ema_window=8)
+        self._update_ema(interval, ema_window=21)
+        self._update_ema(interval, ema_window=50)
 
     def _update_range20(self, interval: int) -> None:
         if interval != 5 and interval != 15:

@@ -1229,6 +1229,618 @@
                     </property>
                 </widget>
             </item>
+
+            <item row="0" column="6">
+                <widget class="QLabel" name="emao5title">
+                    <property name="text">
+                        <string>EMA Order(5min)</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="6">
+                <widget class="QLabel" name="emao5_AUDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="6">
+                <widget class="QLabel" name="emao5_AUDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="6">
+                <widget class="QLabel" name="emao5_AUDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="6">
+                <widget class="QLabel" name="emao5_AUDNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="6">
+                <widget class="QLabel" name="emao5_AUDUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="6">
+                <widget class="QLabel" name="emao5_CADCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="6">
+                <widget class="QLabel" name="emao5_CADJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="6">
+                <widget class="QLabel" name="emao5_CHFJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="6">
+                <widget class="QLabel" name="emao5_EURAUD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="6">
+                <widget class="QLabel" name="emao5_EURCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="6">
+                <widget class="QLabel" name="emao5_EURCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="6">
+                <widget class="QLabel" name="emao5_EURGBP">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="6">
+                <widget class="QLabel" name="emao5_EURJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="6">
+                <widget class="QLabel" name="emao5_EURNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="6">
+                <widget class="QLabel" name="emao5_EURUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="6">
+                <widget class="QLabel" name="emao5_GBPAUD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="6">
+                <widget class="QLabel" name="emao5_GBPCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="6">
+                <widget class="QLabel" name="emao5_GBPCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="6">
+                <widget class="QLabel" name="emao5_GBPJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="6">
+                <widget class="QLabel" name="emao5_GBPNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="6">
+                <widget class="QLabel" name="emao5_GBPUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="6">
+                <widget class="QLabel" name="emao5_NZDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="6">
+                <widget class="QLabel" name="emao5_NZDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="6">
+                <widget class="QLabel" name="emao5_NZDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="6">
+                <widget class="QLabel" name="emao5_NZDUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="6">
+                <widget class="QLabel" name="emao5_USDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="6">
+                <widget class="QLabel" name="emao5_USDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="6">
+                <widget class="QLabel" name="emao5_USDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="7">
+                <widget class="QLabel" name="emao15title">
+                    <property name="text">
+                        <string>EMA Order(15min)</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="7">
+                <widget class="QLabel" name="emao15_AUDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="7">
+                <widget class="QLabel" name="emao15_AUDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="7">
+                <widget class="QLabel" name="emao15_AUDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="7">
+                <widget class="QLabel" name="emao15_AUDNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="7">
+                <widget class="QLabel" name="emao15_AUDUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="7">
+                <widget class="QLabel" name="emao15_CADCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="7">
+                <widget class="QLabel" name="emao15_CADJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="7">
+                <widget class="QLabel" name="emao15_CHFJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="7">
+                <widget class="QLabel" name="emao15_EURAUD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="7">
+                <widget class="QLabel" name="emao15_EURCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="7">
+                <widget class="QLabel" name="emao15_EURCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="7">
+                <widget class="QLabel" name="emao15_EURGBP">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="7">
+                <widget class="QLabel" name="emao15_EURJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="7">
+                <widget class="QLabel" name="emao15_EURNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="7">
+                <widget class="QLabel" name="emao15_EURUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="7">
+                <widget class="QLabel" name="emao15_GBPAUD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="7">
+                <widget class="QLabel" name="emao15_GBPCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="7">
+                <widget class="QLabel" name="emao15_GBPCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="7">
+                <widget class="QLabel" name="emao15_GBPJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="7">
+                <widget class="QLabel" name="emao15_GBPNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="7">
+                <widget class="QLabel" name="emao15_GBPUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="7">
+                <widget class="QLabel" name="emao15_NZDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="7">
+                <widget class="QLabel" name="emao15_NZDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="7">
+                <widget class="QLabel" name="emao15_NZDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="7">
+                <widget class="QLabel" name="emao15_NZDUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="7">
+                <widget class="QLabel" name="emao15_USDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="7">
+                <widget class="QLabel" name="emao15_USDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="7">
+                <widget class="QLabel" name="emao15_USDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="8">
+                <widget class="QLabel" name="emao60title">
+                    <property name="text">
+                        <string>EMA Order(60min)</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="8">
+                <widget class="QLabel" name="emao60_AUDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="8">
+                <widget class="QLabel" name="emao60_AUDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="8">
+                <widget class="QLabel" name="emao60_AUDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="8">
+                <widget class="QLabel" name="emao60_AUDNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="8">
+                <widget class="QLabel" name="emao60_AUDUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="8">
+                <widget class="QLabel" name="emao60_CADCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="8">
+                <widget class="QLabel" name="emao60_CADJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="8">
+                <widget class="QLabel" name="emao60_CHFJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="8">
+                <widget class="QLabel" name="emao60_EURAUD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="8">
+                <widget class="QLabel" name="emao60_EURCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="8">
+                <widget class="QLabel" name="emao60_EURCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="8">
+                <widget class="QLabel" name="emao60_EURGBP">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="8">
+                <widget class="QLabel" name="emao60_EURJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="8">
+                <widget class="QLabel" name="emao60_EURNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="8">
+                <widget class="QLabel" name="emao60_EURUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="8">
+                <widget class="QLabel" name="emao60_GBPAUD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="8">
+                <widget class="QLabel" name="emao60_GBPCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="8">
+                <widget class="QLabel" name="emao60_GBPCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="8">
+                <widget class="QLabel" name="emao60_GBPJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="8">
+                <widget class="QLabel" name="emao60_GBPNZD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="8">
+                <widget class="QLabel" name="emao60_GBPUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="8">
+                <widget class="QLabel" name="emao60_NZDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="8">
+                <widget class="QLabel" name="emao60_NZDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="8">
+                <widget class="QLabel" name="emao60_NZDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="8">
+                <widget class="QLabel" name="emao60_NZDUSD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="8">
+                <widget class="QLabel" name="emao60_USDCAD">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="8">
+                <widget class="QLabel" name="emao60_USDCHF">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="8">
+                <widget class="QLabel" name="emao60_USDJPY">
+                    <property name="text">
+                        <string>...</string>
+                    </property>
+                </widget>
+            </item>
         </layout>
     </widget>
     <resources/>
