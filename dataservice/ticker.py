@@ -68,6 +68,11 @@ class Ticker:
                 240: collections.deque(maxlen=TSI_PERIOD),
             }
         }
+        self.ema_order = {
+            5: collections.deque(maxlen=TSI_PERIOD),
+            15: collections.deque(maxlen=TSI_PERIOD),
+            60: collections.deque(maxlen=TSI_PERIOD),
+        }
         self.price_change = {
             1: collections.deque(maxlen=TSI_PERIOD),
             5: collections.deque(maxlen=TSI_PERIOD),
@@ -100,6 +105,7 @@ class Ticker:
         multiplier = 100.0 if 'JPY' in self.name else 10000.0
 
         self._update_all_ema(interval)
+        self._update_ema_order(interval)
         self._update_price_change(interval)
         self._update_tsi(interval)
         self._update_range20(interval)
@@ -126,7 +132,7 @@ class Ticker:
                 (self.close_price[interval][-1] - self.close_price[interval][-2]) / self.close_price[interval][-2])
 
     def _update_tsi(self, interval: int):
-        if len(self.price_change[interval]) < 200:
+        if len(self.price_change[interval]) < TSI_PERIOD:
             self.trend_smooth_indicator[interval].append(np.nan)
         else:
             close_array = np.asarray(self.price_change[interval])
@@ -142,6 +148,18 @@ class Ticker:
             self.ema[ema_window][interval].append(
                 2. / (ema_window + 1) * (self.close_price[interval][-1] - self.ema[ema_window][interval][-1]) +
                 self.ema[ema_window][interval][-1])
+
+    def _update_ema_order(self, interval: int) -> None:
+        if interval != 5 and interval != 15 and interval != 60:
+            return
+        if len(self.close_price[interval]) < 50:
+            self.ema_order[interval].append(np.nan)
+        elif (self.ema[8][interval] > self.ema[21][interval]) and (self.ema[21][interval] > self.ema[50][interval]):
+            self.ema_order[interval].append(1)
+        elif (self.ema[8][interval] < self.ema[21][interval]) and (self.ema[21][interval] < self.ema[50][interval]):
+            self.ema_order[interval].append(-1)
+        else:
+            self.ema_order[interval].append(0)
 
 
 def _get_adx_sum(s, n):

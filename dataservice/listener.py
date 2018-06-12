@@ -41,21 +41,24 @@ class QuoteListener(SilentBarListener):
     def _update_gui_5min(self, ticker: Ticker) -> None:
         self._update_text("range20min5_", ticker.name, ticker.range[5][-1])
         self._update_text("tsi5_", ticker.name, ticker.trend_smooth_indicator[5][-1])
+        self._update_text("emao5_", ticker.name, ticker.ema_order[5][-1], 0)
 
     def _update_gui_15min(self, ticker: Ticker) -> None:
         self._update_text("range20min15_", ticker.name, ticker.range[15][-1])
         self._update_text("tsi15_", ticker.name, ticker.trend_smooth_indicator[15][-1])
+        self._update_text("emao15_", ticker.name, ticker.ema_order[15][-1], 0)
 
     def _update_gui_60min(self, ticker: Ticker) -> None:
         self._update_text("tsi60_", ticker.name, ticker.trend_smooth_indicator[60][-1])
+        self._update_text("emao60_", ticker.name, ticker.ema_order[60][-1], 0)
 
     def _update_gui_240min(self, ticker: Ticker) -> None:
         pass
 
-    def _update_text(self, prefix: str, ticker_name: str, value: float):
+    def _update_text(self, prefix: str, ticker_name: str, value: float, digits=4):
         label_name = prefix + ticker_name
         label = getattr(self.ui, label_name)
-        label.setText(self._str(value))
+        label.setText(self._str(value, digits))
 
     """
     Listener callbacks
@@ -98,5 +101,5 @@ class QuoteListener(SilentBarListener):
         ticker.update_indicator(time_interval)
 
     @staticmethod
-    def _str(number: float) -> str:
-        return '{number:.{digits}f}'.format(number=number, digits=4)
+    def _str(number: float, digits=4) -> str:
+        return '{number:.{digits}f}'.format(number=number, digits=digits)
