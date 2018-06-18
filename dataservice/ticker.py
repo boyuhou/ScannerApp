@@ -6,6 +6,15 @@ import pandas as pd
 TSI_PERIOD = 200
 
 
+class Signals:
+    P5EMA50 = 'p5ema50'
+    P15EMA21 = 'p15ema21'
+    P15EMA50 = 'p15ema50'
+    P60EMA8 = 'p60ema8'
+    P60EMA21 = 'p60ema21'
+    P240EMA8 = 'p240ema8'
+
+
 class Ticker:
     def __init__(self, name: str):
         self.full_name = name
@@ -91,6 +100,7 @@ class Ticker:
             5: collections.deque(maxlen=TSI_PERIOD),
             15: collections.deque(maxlen=TSI_PERIOD)
         }
+        self.watchers = []
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float,
                          quote_time: str) -> None:
@@ -109,6 +119,21 @@ class Ticker:
         self._update_price_change(interval)
         self._update_tsi(interval)
         self._update_range20(interval)
+
+    def add_watcher(self, watcher_name: str):
+        self.watchers.append(watcher_name)
+        print('{} added watcher {}'.format(self.name, watcher_name))
+
+    def remove_watcher(self, watcher_name: str):
+        self.watchers.remove(watcher_name)
+        print('{} removed watcher {}'.format(self.name, watcher_name))
+
+    def start_watch(self):
+        print('{} started watching'.format(self.name), self.watchers)
+
+    def stop_watch(self):
+        self.watchers = []
+        print('{} stopped watching'.format(self.name))
 
     def _update_all_ema(self, interval: int) -> None:
         self._update_ema(interval, ema_window=8)

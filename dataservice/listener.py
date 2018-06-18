@@ -1,6 +1,6 @@
 import numpy as np
 
-from dataservice.ticker import Ticker
+from dataservice.ticker import Ticker, Signals
 from pyiqfeed.listeners import SilentBarListener
 from ui.test import Ui_Dialog
 
@@ -18,8 +18,10 @@ class QuoteListener(SilentBarListener):
         self.tickers = tickers
         self.is_debug = is_debug
         self.data_dict = {}
+        self.callback_dict = {}
         for ticker in tickers:
             self.data_dict[ticker] = Ticker(ticker)
+            self.callback_dict[ticker] = self.UIControlCallback(self, ticker)
         self.gui_callbacks = {
             1: self._update_gui_1min,
             5: self._update_gui_5min,
@@ -28,18 +30,21 @@ class QuoteListener(SilentBarListener):
             240: self._update_gui_240min
         }
 
-        self.callback_dict = {'AUDCAD': self.UIControlCallback(self, 'AUDCAD')}
-        # checkbox1 = getattr(self.ui, 'ckb1_AUDCAD')
-        # checkbox1.stateChanged.connect(self._callback)
+    def add_watcher_callback(self, ticker_name: str, watcher_name: str):
+        ticker = self.data_dict[ticker_name]
+        ticker.add_watcher(watcher_name)
 
-    def checkbox_callback(self, ticker: str, widget: str):
-        print('checked, ticker: {}, widget: {}'.format(ticker, widget))
+    def remove_watcher_callback(self, ticker_name: str, watcher_name: str):
+        ticker = self.data_dict[ticker_name]
+        ticker.remove_watcher(watcher_name)
 
-    def btn_submit_callback(self, ticker: str):
-        print('submit button clicked, ticker:', ticker)
+    def btn_submit_callback(self, ticker_name: str):
+        ticker = self.data_dict[ticker_name]
+        ticker.start_watch()
 
-    def btn_cancel_callback(self, ticker: str):
-        print('cancel button clicked, ticker:', ticker)
+    def btn_cancel_callback(self, ticker_name: str):
+        ticker = self.data_dict[ticker_name]
+        ticker.stop_watch()
 
     """
     GUI callbacks
@@ -119,31 +124,72 @@ class QuoteListener(SilentBarListener):
 
     class UIControlCallback:
         def __init__(self, outer_instance, name: str):
-            self.name = name
+            self.full_name = name
+            self.name = name.split(".")[0]
             self.outer_instance = outer_instance
             self.ui = outer_instance.ui
-            self.checkbox1 = getattr(self.ui, 'ckb1_AUDCAD')
-            self.checkbox2 = getattr(self.ui, 'ckb2_AUDCAD')
-            self.btn_submit = getattr(self.ui, 'submit_AUDCAD')
-            self.btn_cancel = getattr(self.ui, 'cancel_AUDCAD')
+            self.ckb_p5ema50 = getattr(self.ui, 'ckb_p5ema50_' + self.name)
+            self.ckb_p15ema21 = getattr(self.ui, 'ckb_p15ema21_' + self.name)
+            self.ckb_p15ema50 = getattr(self.ui, 'ckb_p15ema50_' + self.name)
+            self.ckb_p60ema8 = getattr(self.ui, 'ckb_p60ema8_' + self.name)
+            self.ckb_p60ema21 = getattr(self.ui, 'ckb_p60ema21_' + self.name)
+            self.ckb_p240ema8 = getattr(self.ui, 'ckb_p240ema8_' + self.name)
+            self.btn_submit = getattr(self.ui, 'submit_' + self.name)
+            self.btn_cancel = getattr(self.ui, 'cancel_' + self.name)
 
-            self.checkbox1.stateChanged.connect(self.checkbox1_callback)
-            self.checkbox2.stateChanged.connect(self.checkbox2_callback)
+            self.ckb_p5ema50.stateChanged.connect(self.p5ema50_callback)
+            self.ckb_p15ema21.stateChanged.connect(self.p15ema21_callback)
+            self.ckb_p15ema50.stateChanged.connect(self.p15ema50_callback)
+            self.ckb_p60ema8.stateChanged.connect(self.p60ema8_callback)
+            self.ckb_p60ema21.stateChanged.connect(self.p60ema21_callback)
+            self.ckb_p240ema8.stateChanged.connect(self.p240ema8_callback)
             self.btn_submit.clicked.connect(self.btn_submit_callback)
             self.btn_cancel.clicked.connect(self.btn_cancel_callback)
 
-        def checkbox1_callback(self):
-            if self.checkbox1.isChecked():
-                self.outer_instance.checkbox_callback(self.name, 'checkbox1')
+        def p5ema50_callback(self):
+            if self.ckb_p5ema50.isChecked():
+                self.outer_instance.add_watcher_callback(self.full_name, Signals.P5EMA50)
+            else:
+                self.outer_instance.remove_watcher_callback(self.full_name, Signals.P5EMA50)
 
-        def checkbox2_callback(self):
-            if self.checkbox2.isChecked():
-                self.outer_instance.checkbox_callback(self.name, 'checkbox2')
+        def p15ema21_callback(self):
+            if self.ckb_p15ema21.isChecked():
+                self.outer_instance.add_watcher_callback(self.full_name, Signals.P15EMA21)
+            else:
+                self.outer_instance.remove_watcher_callback(self.full_name, Signals.P15EMA21)
+
+        def p15ema50_callback(self):
+            if self.ckb_p15ema50.isChecked():
+                self.outer_instance.add_watcher_callback(self.full_name, Signals.P15EMA50)
+            else:
+                self.outer_instance.remove_watcher_callback(self.full_name, Signals.P15EMA50)
+
+        def p60ema8_callback(self):
+            if self.ckb_p60ema8.isChecked():
+                self.outer_instance.add_watcher_callback(self.full_name, Signals.P60EMA8)
+            else:
+                self.outer_instance.remove_watcher_callback(self.full_name, Signals.P60EMA8)
+
+        def p60ema21_callback(self):
+            if self.ckb_p60ema21.isChecked():
+                self.outer_instance.add_watcher_callback(self.full_name, Signals.P60EMA21)
+            else:
+                self.outer_instance.remove_watcher_callback(self.full_name, Signals.P60EMA21)
+
+        def p240ema8_callback(self):
+            if self.ckb_p240ema8.isChecked():
+                self.outer_instance.add_watcher_callback(self.full_name, Signals.P240EMA8)
+            else:
+                self.outer_instance.remove_watcher_callback(self.full_name, Signals.P240EMA8)
 
         def btn_submit_callback(self):
-            self.outer_instance.btn_submit_callback(self.name)
+            self.outer_instance.btn_submit_callback(self.full_name)
 
         def btn_cancel_callback(self):
-            self.checkbox1.setChecked(False)
-            self.checkbox2.setChecked(False)
-            self.outer_instance.btn_cancel_callback(self.name)
+            self.ckb_p5ema50.setChecked(False)
+            self.ckb_p15ema21.setChecked(False)
+            self.ckb_p15ema50.setChecked(False)
+            self.ckb_p60ema8.setChecked(False)
+            self.ckb_p60ema21.setChecked(False)
+            self.ckb_p240ema8.setChecked(False)
+            self.outer_instance.btn_cancel_callback(self.full_name)

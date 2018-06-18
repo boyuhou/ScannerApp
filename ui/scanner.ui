@@ -1842,29 +1842,1619 @@
                 </widget>
             </item>
 
-            <item row="1" column="9">
-                <widget class="QCheckBox" name="ckb1_AUDCAD">
+            <item row="0" column="9">
+                <widget class="QLabel" name="p5ema50title">
                     <property name="text">
-                        <string></string>
+                        <string>5-EMA50</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_AUDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="9">
+                <widget class="QCheckBox" name="ckb_p5ema50_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="10">
+                <widget class="QLabel" name="p15ema21title">
+                    <property name="text">
+                        <string>15-EMA21</string>
                     </property>
                 </widget>
             </item>
             <item row="1" column="10">
-                <widget class="QCheckBox" name="ckb2_AUDCAD">
+                <widget class="QCheckBox" name="ckb_p15ema21_AUDCAD">
                     <property name="text">
-                        <string></string>
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="10">
+                <widget class="QCheckBox" name="ckb_p15ema21_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="11">
+                <widget class="QLabel" name="p15ema50title">
+                    <property name="text">
+                        <string>15-EMA50</string>
                     </property>
                 </widget>
             </item>
             <item row="1" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_AUDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="11">
+                <widget class="QCheckBox" name="ckb_p15ema50_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="12">
+                <widget class="QLabel" name="p60ema8title">
+                    <property name="text">
+                        <string>60-EMA8</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_AUDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="12">
+                <widget class="QCheckBox" name="ckb_p60ema8_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="13">
+                <widget class="QLabel" name="p60ema21title">
+                    <property name="text">
+                        <string>60-EMA21</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_AUDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="13">
+                <widget class="QCheckBox" name="ckb_p60ema21_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="14">
+                <widget class="QLabel" name="p240ema8title">
+                    <property name="text">
+                        <string>240-EMA8</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_AUDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="14">
+                <widget class="QCheckBox" name="ckb_p240ema8_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+
+            <item row="1" column="17">
                 <widget class="QPushButton" name="submit_AUDCAD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="1" column="12">
+            <item row="2" column="17">
+                <widget class="QPushButton" name="submit_AUDCHF">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="17">
+                <widget class="QPushButton" name="submit_AUDJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="17">
+                <widget class="QPushButton" name="submit_AUDNZD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="17">
+                <widget class="QPushButton" name="submit_AUDUSD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="17">
+                <widget class="QPushButton" name="submit_CADCHF">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="17">
+                <widget class="QPushButton" name="submit_CADJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="17">
+                <widget class="QPushButton" name="submit_CHFJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="17">
+                <widget class="QPushButton" name="submit_EURAUD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="17">
+                <widget class="QPushButton" name="submit_EURCAD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="17">
+                <widget class="QPushButton" name="submit_EURCHF">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="17">
+                <widget class="QPushButton" name="submit_EURGBP">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="17">
+                <widget class="QPushButton" name="submit_EURJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="17">
+                <widget class="QPushButton" name="submit_EURNZD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="17">
+                <widget class="QPushButton" name="submit_EURUSD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="17">
+                <widget class="QPushButton" name="submit_GBPAUD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="17">
+                <widget class="QPushButton" name="submit_GBPCAD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="17">
+                <widget class="QPushButton" name="submit_GBPCHF">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="17">
+                <widget class="QPushButton" name="submit_GBPJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="17">
+                <widget class="QPushButton" name="submit_GBPNZD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="17">
+                <widget class="QPushButton" name="submit_GBPUSD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="17">
+                <widget class="QPushButton" name="submit_NZDCAD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="17">
+                <widget class="QPushButton" name="submit_NZDCHF">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="17">
+                <widget class="QPushButton" name="submit_NZDJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="17">
+                <widget class="QPushButton" name="submit_NZDUSD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="17">
+                <widget class="QPushButton" name="submit_USDCAD">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="17">
+                <widget class="QPushButton" name="submit_USDCHF">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="17">
+                <widget class="QPushButton" name="submit_USDJPY">
+                    <property name="text">
+                        <string>Submit</string>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="1" column="18">
                 <widget class="QPushButton" name="cancel_AUDCAD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="18">
+                <widget class="QPushButton" name="cancel_AUDCHF">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="18">
+                <widget class="QPushButton" name="cancel_AUDJPY">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="18">
+                <widget class="QPushButton" name="cancel_AUDNZD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="18">
+                <widget class="QPushButton" name="cancel_AUDUSD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="18">
+                <widget class="QPushButton" name="cancel_CADCHF">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="18">
+                <widget class="QPushButton" name="cancel_CADJPY">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="18">
+                <widget class="QPushButton" name="cancel_CHFJPY">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="18">
+                <widget class="QPushButton" name="cancel_EURAUD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="18">
+                <widget class="QPushButton" name="cancel_EURCAD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="18">
+                <widget class="QPushButton" name="cancel_EURCHF">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="18">
+                <widget class="QPushButton" name="cancel_EURGBP">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="18">
+                <widget class="QPushButton" name="cancel_EURJPY">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="18">
+                <widget class="QPushButton" name="cancel_EURNZD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="18">
+                <widget class="QPushButton" name="cancel_EURUSD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="18">
+                <widget class="QPushButton" name="cancel_GBPAUD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="18">
+                <widget class="QPushButton" name="cancel_GBPCAD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="18">
+                <widget class="QPushButton" name="cancel_GBPCHF">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="18">
+                <widget class="QPushButton" name="cancel_GBPJPY">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="18">
+                <widget class="QPushButton" name="cancel_GBPNZD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="18">
+                <widget class="QPushButton" name="cancel_GBPUSD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="18">
+                <widget class="QPushButton" name="cancel_NZDCAD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="18">
+                <widget class="QPushButton" name="cancel_NZDCHF">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="18">
+                <widget class="QPushButton" name="cancel_NZDJPY">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="18">
+                <widget class="QPushButton" name="cancel_NZDUSD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="18">
+                <widget class="QPushButton" name="cancel_USDCAD">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="18">
+                <widget class="QPushButton" name="cancel_USDCHF">
+                    <property name="text">
+                        <string>Cancel</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="18">
+                <widget class="QPushButton" name="cancel_USDJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
