@@ -28,6 +28,19 @@ class QuoteListener(SilentBarListener):
             240: self._update_gui_240min
         }
 
+        self.callback_dict = {'AUDCAD': self.UIControlCallback(self, 'AUDCAD')}
+        # checkbox1 = getattr(self.ui, 'ckb1_AUDCAD')
+        # checkbox1.stateChanged.connect(self._callback)
+
+    def checkbox_callback(self, ticker: str, widget: str):
+        print('checked, ticker: {}, widget: {}'.format(ticker, widget))
+
+    def btn_submit_callback(self, ticker: str):
+        print('submit button clicked, ticker:', ticker)
+
+    def btn_cancel_callback(self, ticker: str):
+        print('cancel button clicked, ticker:', ticker)
+
     """
     GUI callbacks
     """
@@ -103,3 +116,34 @@ class QuoteListener(SilentBarListener):
     @staticmethod
     def _str(number: float, digits=4) -> str:
         return '{number:.{digits}f}'.format(number=number, digits=digits)
+
+    class UIControlCallback:
+        def __init__(self, outer_instance, name: str):
+            self.name = name
+            self.outer_instance = outer_instance
+            self.ui = outer_instance.ui
+            self.checkbox1 = getattr(self.ui, 'ckb1_AUDCAD')
+            self.checkbox2 = getattr(self.ui, 'ckb2_AUDCAD')
+            self.btn_submit = getattr(self.ui, 'submit_AUDCAD')
+            self.btn_cancel = getattr(self.ui, 'cancel_AUDCAD')
+
+            self.checkbox1.stateChanged.connect(self.checkbox1_callback)
+            self.checkbox2.stateChanged.connect(self.checkbox2_callback)
+            self.btn_submit.clicked.connect(self.btn_submit_callback)
+            self.btn_cancel.clicked.connect(self.btn_cancel_callback)
+
+        def checkbox1_callback(self):
+            if self.checkbox1.isChecked():
+                self.outer_instance.checkbox_callback(self.name, 'checkbox1')
+
+        def checkbox2_callback(self):
+            if self.checkbox2.isChecked():
+                self.outer_instance.checkbox_callback(self.name, 'checkbox2')
+
+        def btn_submit_callback(self):
+            self.outer_instance.btn_submit_callback(self.name)
+
+        def btn_cancel_callback(self):
+            self.checkbox1.setChecked(False)
+            self.checkbox2.setChecked(False)
+            self.outer_instance.btn_cancel_callback(self.name)

@@ -794,6 +794,20 @@ class Ui_Dialog(object):
         self.emao60_USDJPY = QtWidgets.QLabel(Dialog)
         self.emao60_USDJPY.setObjectName("emao60_USDJPY")
         self.gridLayout_4.addWidget(self.emao60_USDJPY, 28, 8, 1, 1)
+        self.ckb1_AUDCAD = QtWidgets.QCheckBox(Dialog)
+        self.ckb1_AUDCAD.setText("")
+        self.ckb1_AUDCAD.setObjectName("ckb1_AUDCAD")
+        self.gridLayout_4.addWidget(self.ckb1_AUDCAD, 1, 9, 1, 1)
+        self.ckb2_AUDCAD = QtWidgets.QCheckBox(Dialog)
+        self.ckb2_AUDCAD.setText("")
+        self.ckb2_AUDCAD.setObjectName("ckb2_AUDCAD")
+        self.gridLayout_4.addWidget(self.ckb2_AUDCAD, 1, 10, 1, 1)
+        self.submit_AUDCAD = QtWidgets.QPushButton(Dialog)
+        self.submit_AUDCAD.setObjectName("submit_AUDCAD")
+        self.gridLayout_4.addWidget(self.submit_AUDCAD, 1, 11, 1, 1)
+        self.cancel_AUDCAD = QtWidgets.QPushButton(Dialog)
+        self.cancel_AUDCAD.setObjectName("cancel_AUDCAD")
+        self.gridLayout_4.addWidget(self.cancel_AUDCAD, 1, 12, 1, 1)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -1061,6 +1075,8 @@ class Ui_Dialog(object):
         self.emao60_USDCAD.setText(_translate("Dialog", "..."))
         self.emao60_USDCHF.setText(_translate("Dialog", "..."))
         self.emao60_USDJPY.setText(_translate("Dialog", "..."))
+        self.submit_AUDCAD.setText(_translate("Dialog", "Submit"))
+        self.cancel_AUDCAD.setText(_translate("Dialog", "Cancel"))
 
 
 if __name__ == "__main__":
