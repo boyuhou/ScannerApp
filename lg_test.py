@@ -49,15 +49,15 @@ if __name__ == "__main__":
     Init listener
     """
     bar_conn = iq.BarConn(name='scanner app connection')
-    bar_listener = QuoteListener(name='customized bar listener', ui=ui, tickers=tickers, is_debug=True)
+    bar_listener = QuoteListener(name='customized bar listener', ui=ui, tickers=tickers, ui_app=app, is_debug=True)
     bar_conn.add_listener(bar_listener)
 
     with iq.ConnConnector([bar_conn]) as conn:
-        # for ticker in tickers:
-        #     bar_conn.watch(symbol=ticker, interval_len=1 * 60, interval_type='s', update=1, lookback_bars=205)
-        #     bar_conn.watch(symbol=ticker, interval_len=5 * 60, interval_type='s', update=1, lookback_bars=205)
-        #     bar_conn.watch(symbol=ticker, interval_len=15 * 60, interval_type='s', update=1, lookback_bars=205)
-        #     bar_conn.watch(symbol=ticker, interval_len=60 * 60, interval_type='s', update=1, lookback_bars=205)
+        for ticker in tickers:
+            bar_conn.watch(symbol=ticker, interval_len=1 * 60, interval_type='s', update=1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=5 * 60, interval_type='s', update=1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=15 * 60, interval_type='s', update=1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=60 * 60, interval_type='s', update=1, lookback_bars=205)
 
         Dialog.show()
         sys.exit(app.exec_())
