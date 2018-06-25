@@ -54,10 +54,10 @@ if __name__ == "__main__":
 
     with iq.ConnConnector([bar_conn]) as conn:
         for ticker in tickers:
-            bar_conn.watch(symbol=ticker, interval_len=1 * 60, interval_type='s', update=10, lookback_bars=205)
-            bar_conn.watch(symbol=ticker, interval_len=5 * 60, interval_type='s', update=-1, lookback_bars=205)
-            bar_conn.watch(symbol=ticker, interval_len=15 * 60, interval_type='s', update=-1, lookback_bars=205)
-            bar_conn.watch(symbol=ticker, interval_len=60 * 60, interval_type='s', update=-1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=1 * 60, interval_type='s', update=1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=5 * 60, interval_type='s', update=1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=15 * 60, interval_type='s', update=1, lookback_bars=205)
+            bar_conn.watch(symbol=ticker, interval_len=60 * 60, interval_type='s', update=1, lookback_bars=205)
 
         Dialog.show()
         sys.exit(app.exec_())

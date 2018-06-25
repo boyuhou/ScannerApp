@@ -132,13 +132,14 @@ class Ticker:
         self._update_tsi(interval)
         self._update_range20(interval)
 
-    def update_latest_price(self, high_p: float, low_p: float) -> None:
+    def update_latest_price(self, high_p: float, low_p: float, time_interval: int) -> None:
         for watcher_name, is_touched in self.active_watchers.items():
             if not is_touched:
                 price_period = WATCHER_PERIOD_DICT[watcher_name][0]
-                ema_period = WATCHER_PERIOD_DICT[watcher_name][1]
-                ema_price = list(self.ema[ema_period][price_period])[-1]
-                self.active_watchers[watcher_name] = (low_p < ema_price) and (ema_price < high_p)
+                if time_interval == price_period:
+                    ema_period = WATCHER_PERIOD_DICT[watcher_name][1]
+                    ema_price = list(self.ema[ema_period][price_period])[-1]
+                    self.active_watchers[watcher_name] = (low_p < ema_price) and (ema_price < high_p)
 
     def start_watch(self, watcher_names: List[str]):
         self.active_watchers = {}

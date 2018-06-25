@@ -137,9 +137,10 @@ class QuoteListener(SilentBarListener):
         name = bar_data['symbol'][0]
         high_price = bar_data['high_p'][0]
         low_price = bar_data['low_p'][0]
+        time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
         ticker = self.data_dict[name]
 
-        ticker.update_latest_price(high_price, low_price)
+        ticker.update_latest_price(high_price, low_price, time_interval)
         self.update_gui_latest(ticker)
 
     def process_live_bar(self, bar_data: np.array) -> None:
