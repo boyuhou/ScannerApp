@@ -244,4 +244,5 @@ class QuoteListener(SilentBarListener):
             for checkbox in self.checkboxes.keys():
                 checkbox.setChecked(False)
                 checkbox.setEnabled(True)
+                checkbox.setStyleSheet("background-color: none")
             self.outer_instance.btn_cancel_callback(self.full_name)
