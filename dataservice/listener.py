@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import List
 
 import numpy as np
@@ -148,6 +149,9 @@ class QuoteListener(SilentBarListener):
         close_price = bar_data['close_p'][0]
         quote_time = bar_data['datetime'][0]
         ticker = self.data_dict[name]
+
+        if datetime.now() < datetime.strptime(quote_time, "%Y-%m-%d %H:%M:%S"):
+            return
 
         ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
         ticker.update_indicator(time_interval)
