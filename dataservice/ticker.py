@@ -162,7 +162,7 @@ class Ticker:
         if (len(self.high_price[interval]) < 20) or (len(self.low_price[interval]) < 20):
             self.range[interval].append(np.nan)
         else:
-            interval_range = max(list(self.high_price[interval])[-20:]) - min(list(self.low_price[interval])[-20:])
+            interval_range = max(list(self.close_price[interval])[-20:]) - min(list(self.close_price[interval])[-20:])
             self.range[interval].append(interval_range * self.multiplier)
 
     def _update_price_change(self, interval: int):
