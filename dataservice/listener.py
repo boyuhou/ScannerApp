@@ -80,7 +80,7 @@ class QuoteListener(SilentBarListener):
         else:
             label.setStyleSheet("background-color: none")
 
-    def update_gui_live(self, ticker: Ticker):
+    def update_gui_latest(self, ticker: Ticker):
         is_all_touched = True
         for watcher_name, is_touched in ticker.active_watchers.items():
             widget = self.callback_dict[ticker.full_name].signal_widget_dict[watcher_name]
@@ -104,7 +104,18 @@ class QuoteListener(SilentBarListener):
 
     def process_latest_bar_update(self, bar_data: np.array) -> None:
         if self.is_debug:
-            print("Process latest bar update: ", bar_data)
+            print("Process latest bar: ", bar_data)
+        name = bar_data['symbol'][0]
+        high_price = bar_data['high_p'][0]
+        low_price = bar_data['low_p'][0]
+        ticker = self.data_dict[name]
+
+        ticker.update_latest_price(high_price, low_price)
+        self.update_gui_latest(ticker)
+
+    def process_live_bar(self, bar_data: np.array) -> None:
+        if self.is_debug:
+            print("Process live bar update: ", bar_data)
         time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
         name = bar_data['symbol'][0]
         open_price = bar_data['open_p'][0]
@@ -115,24 +126,20 @@ class QuoteListener(SilentBarListener):
         ticker = self.data_dict[name]
 
         ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+        '''
+        Init UI if necessary
+        '''
         ticker.update_indicator(time_interval)
-        self.update_gui(ticker, time_interval)
-
-    def process_live_bar(self, bar_data: np.array) -> None:
-        if self.is_debug:
-            print("Process live bar: ", bar_data)
-        name = bar_data['symbol'][0]
-        high_price = bar_data['high_p'][0]
-        low_price = bar_data['low_p'][0]
-        ticker = self.data_dict[name]
-
-        ticker.update_live_price(high_price, low_price)
-        self.update_gui_live(ticker)
+        if not ticker.is_ui_loaded:
+            for interval in self.gui_callbacks.keys():
+                self.update_gui(ticker, interval)
+            ticker.is_ui_loaded = True
+        else:
+            self.update_gui(ticker, time_interval)
 
     def process_history_bar(self, bar_data: np.array) -> None:
         if self.is_debug:
             print("Process history bar: ", bar_data)
-
         time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
         name = bar_data['symbol'][0]
         open_price = bar_data['open_p'][0]

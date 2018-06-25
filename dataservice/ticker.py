@@ -58,13 +58,6 @@ class Ticker:
             60: collections.deque(maxlen=TSI_PERIOD),
             240: collections.deque(maxlen=TSI_PERIOD),
         }
-        self.quote_time = {
-            1: collections.deque(maxlen=TSI_PERIOD),
-            5: collections.deque(maxlen=TSI_PERIOD),
-            15: collections.deque(maxlen=TSI_PERIOD),
-            60: collections.deque(maxlen=TSI_PERIOD),
-            240: collections.deque(maxlen=TSI_PERIOD),
-        }
         self.ema = {
             8: {
                 1: collections.deque(maxlen=TSI_PERIOD),
@@ -112,15 +105,24 @@ class Ticker:
             15: collections.deque(maxlen=TSI_PERIOD)
         }
         self.active_watchers = {}
+        self.latest_quote_time = {
+            1: "",
+            5: "",
+            15: "",
+            60: "",
+            240: "",
+        }
+        self.is_ui_loaded = False
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float,
                          quote_time: str) -> None:
+        if (len(self.latest_quote_time[time_interval]) != 0) and (self.latest_quote_time[time_interval] == quote_time):
+            return
         self.close_price[time_interval].append(close_p)
         self.open_price[time_interval].append(open_p)
         self.low_price[time_interval].append(low_p)
         self.high_price[time_interval].append(high_p)
-        if self.quote_time[time_interval] != quote_time:
-            self.quote_time[time_interval].append(quote_time)
+        self.latest_quote_time[time_interval] = quote_time
 
     def update_indicator(self, interval) -> None:
         multiplier = 100.0 if 'JPY' in self.name else 10000.0
@@ -131,7 +133,7 @@ class Ticker:
         self._update_tsi(interval)
         self._update_range20(interval)
 
-    def update_live_price(self, high_p: float, low_p: float) -> None:
+    def update_latest_price(self, high_p: float, low_p: float) -> None:
         for watcher_name, is_touched in self.active_watchers.items():
             if not is_touched:
                 price_period = WATCHER_PERIOD_DICT[watcher_name][0]
