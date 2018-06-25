@@ -49,7 +49,7 @@ class QuoteListener(SilentBarListener):
     def _update_gui_5min(self, ticker: Ticker) -> None:
         range_value = ticker.range[5][-1]
         self._update_text("range20min5_", ticker.name, range_value)
-        self._update_bg_color("range20min5_", ticker.name, self._get_range_bg_color(range_value))
+        self._update_bg_color("range20min5_", ticker.name, self._get_range5_bg_color(range_value))
         self._update_text("tsi5_", ticker.name, ticker.trend_smooth_indicator[5][-1])
         self._update_text("emao5_", ticker.name, ticker.ema_order[5][-1], 0)
         self._update_bg_color("emao5_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[5][-1]))
@@ -57,7 +57,7 @@ class QuoteListener(SilentBarListener):
     def _update_gui_15min(self, ticker: Ticker) -> None:
         range_value = ticker.range[15][-1]
         self._update_text("range20min15_", ticker.name, range_value)
-        self._update_bg_color("range20min15_", ticker.name, self._get_range_bg_color(range_value))
+        self._update_bg_color("range20min15_", ticker.name, self._get_range15_bg_color(range_value))
         self._update_text("tsi15_", ticker.name, ticker.trend_smooth_indicator[15][-1])
         self._update_text("emao15_", ticker.name, ticker.ema_order[15][-1], 0)
         self._update_bg_color("emao15_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[15][-1]))
@@ -90,11 +90,20 @@ class QuoteListener(SilentBarListener):
             return "none"
 
     @staticmethod
-    def _get_range_bg_color(value: float) -> str:
+    def _get_range5_bg_color(value: float) -> str:
         if value <= 7:
             return "green"
         elif value <= 14:
+            return "yellow"
+        elif value >= 21:
             return "red"
+        else:
+            return "none"
+
+    @staticmethod
+    def _get_range15_bg_color(value: float) -> str:
+        if value <= 14:
+            return "green"
         elif value <= 21:
             return "yellow"
         else:
