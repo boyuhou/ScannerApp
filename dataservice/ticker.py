@@ -113,6 +113,7 @@ class Ticker:
             240: "",
         }
         self.is_ui_loaded = False
+        self.multiplier = 100.0 if 'JPY' in self.name else 10000.0
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float,
                          quote_time: str) -> None:
@@ -125,8 +126,6 @@ class Ticker:
         self.latest_quote_time[time_interval] = quote_time
 
     def update_indicator(self, interval) -> None:
-        multiplier = 100.0 if 'JPY' in self.name else 10000.0
-
         self._update_all_ema(interval)
         self._update_ema_order(interval)
         self._update_price_change(interval)
@@ -164,7 +163,7 @@ class Ticker:
             self.range[interval].append(np.nan)
         else:
             interval_range = max(list(self.high_price[interval])[-20:]) - min(list(self.low_price[interval])[-20:])
-            self.range[interval].append(interval_range)
+            self.range[interval].append(interval_range * self.multiplier)
 
     def _update_price_change(self, interval: int):
         if len(self.close_price[interval]) < 2:

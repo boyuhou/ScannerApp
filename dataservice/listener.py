@@ -47,21 +47,25 @@ class QuoteListener(SilentBarListener):
         pass
 
     def _update_gui_5min(self, ticker: Ticker) -> None:
-        self._update_text("range20min5_", ticker.name, ticker.range[5][-1])
+        range_value = ticker.range[5][-1]
+        self._update_text("range20min5_", ticker.name, range_value)
+        self._update_bg_color("range20min5_", ticker.name, self._get_range_bg_color(range_value))
         self._update_text("tsi5_", ticker.name, ticker.trend_smooth_indicator[5][-1])
         self._update_text("emao5_", ticker.name, ticker.ema_order[5][-1], 0)
-        self._update_bg_color("emao5_", ticker.name, ticker.ema_order[5][-1])
+        self._update_bg_color("emao5_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[5][-1]))
 
     def _update_gui_15min(self, ticker: Ticker) -> None:
-        self._update_text("range20min15_", ticker.name, ticker.range[15][-1])
+        range_value = ticker.range[15][-1]
+        self._update_text("range20min15_", ticker.name, range_value)
+        self._update_bg_color("range20min15_", ticker.name, self._get_range_bg_color(range_value))
         self._update_text("tsi15_", ticker.name, ticker.trend_smooth_indicator[15][-1])
         self._update_text("emao15_", ticker.name, ticker.ema_order[15][-1], 0)
-        self._update_bg_color("emao15_", ticker.name, ticker.ema_order[15][-1])
+        self._update_bg_color("emao15_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[15][-1]))
 
     def _update_gui_60min(self, ticker: Ticker) -> None:
         self._update_text("tsi60_", ticker.name, ticker.trend_smooth_indicator[60][-1])
         self._update_text("emao60_", ticker.name, ticker.ema_order[60][-1], 0)
-        self._update_bg_color("emao60_", ticker.name, ticker.ema_order[60][-1])
+        self._update_bg_color("emao60_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[60][-1]))
 
     def _update_gui_240min(self, ticker: Ticker) -> None:
         pass
@@ -71,15 +75,30 @@ class QuoteListener(SilentBarListener):
         label = getattr(self.ui, label_name)
         label.setText(self._str(value, digits))
 
-    def _update_bg_color(self, prefix: str, ticker_name: str, value: float):
-        label_name = prefix + ticker_name
-        label = getattr(self.ui, label_name)
+    def _update_bg_color(self, prefix: str, ticker_name: str, color: str):
+        widget_name = prefix + ticker_name
+        widget = getattr(self.ui, widget_name)
+        widget.setStyleSheet("background-color: {}".format(color))
+
+    @staticmethod
+    def _get_watcher_bg_color(value: float) -> str:
         if value == 1:
-            label.setStyleSheet("background-color: green")
+            return "green"
         elif value == -1:
-            label.setStyleSheet("background-color: red")
+            return "red"
         else:
-            label.setStyleSheet("background-color: none")
+            return "none"
+
+    @staticmethod
+    def _get_range_bg_color(value: float) -> str:
+        if value <= 7:
+            return "green"
+        elif value <= 14:
+            return "red"
+        elif value <= 21:
+            return "yellow"
+        else:
+            return "none"
 
     def update_gui_latest(self, ticker: Ticker):
         is_all_touched = True
@@ -150,11 +169,9 @@ class QuoteListener(SilentBarListener):
         quote_time = bar_data['datetime'][0]
         ticker = self.data_dict[name]
 
-        if datetime.now() < datetime.strptime(quote_time, "%Y-%m-%d %H:%M:%S"):
-            return
-
-        ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
-        ticker.update_indicator(time_interval)
+        if datetime.now() >= datetime.strptime(quote_time, "%Y-%m-%d %H:%M:%S"):
+            ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+            ticker.update_indicator(time_interval)
 
     @staticmethod
     def _str(number: float, digits=4) -> str:
