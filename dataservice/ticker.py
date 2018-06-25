@@ -195,9 +195,14 @@ class Ticker:
             return
         if len(self.close_price[interval]) < 50:
             self.ema_order[interval].append(np.nan)
-        elif (self.ema[8][interval] > self.ema[21][interval]) and (self.ema[21][interval] > self.ema[50][interval]):
+            return
+
+        ema8 = list(self.ema[8][interval])[-1]
+        ema21 = list(self.ema[21][interval])[-1]
+        ema50 = list(self.ema[50][interval])[-1]
+        if (ema8 > ema21) and (ema21 > ema50):
             self.ema_order[interval].append(1)
-        elif (self.ema[8][interval] < self.ema[21][interval]) and (self.ema[21][interval] < self.ema[50][interval]):
+        elif (ema8 < ema21) and (ema21 < ema50):
             self.ema_order[interval].append(-1)
         else:
             self.ema_order[interval].append(0)
