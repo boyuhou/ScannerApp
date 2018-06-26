@@ -35,6 +35,8 @@ class QuoteListener(SilentBarListener):
             60: self._update_gui_60min,
             240: self._update_gui_240min
         }
+        self.system_tray_icon = Qt.QSystemTrayIcon(self.ui_app)
+        self.system_tray_icon.show()
 
     """
     GUI callbacks
@@ -123,9 +125,7 @@ class QuoteListener(SilentBarListener):
 
     def _show_popup(self, ticker_name: str):
         self.ui_app.processEvents()
-        system_tray_icon = Qt.QSystemTrayIcon(self.ui_app)
-        system_tray_icon.show()
-        system_tray_icon.showMessage('Ticker', ticker_name)
+        self.system_tray_icon.showMessage('Ticker', ticker_name)
 
     """
     Listener callbacks
