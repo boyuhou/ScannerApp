@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import QApplication
 
 from dataservice.ticker import Ticker, Signals
 from pyiqfeed.listeners import SilentBarListener
-from ui.test import Ui_Dialog
+from ui.test import Ui_MainWindow
 
 
 class QuoteListener(SilentBarListener):
@@ -17,7 +17,7 @@ class QuoteListener(SilentBarListener):
     It maintains all the tickers data and update ui
     """
 
-    def __init__(self, name: str, ui: Ui_Dialog, tickers: [str], ui_app: QApplication, is_debug: bool = False):
+    def __init__(self, name: str, ui: Ui_MainWindow, tickers: [str], ui_app: QApplication, is_debug: bool = False):
         super().__init__(name)
         self.ui = ui
         self.tickers = tickers
@@ -124,7 +124,6 @@ class QuoteListener(SilentBarListener):
             self._show_popup(ticker.name)
 
     def _show_popup(self, ticker_name: str):
-        self.ui_app.processEvents()
         self.system_tray_icon.showMessage('Ticker', ticker_name)
 
     """
@@ -142,6 +141,11 @@ class QuoteListener(SilentBarListener):
 
         ticker.update_latest_price(high_price, low_price, time_interval)
         self.update_gui_latest(ticker)
+        # Init GUI if necessary
+        if not ticker.is_ui_loaded:
+            for interval in self.gui_callbacks.keys():
+                self.update_gui(ticker, interval)
+            ticker.is_ui_loaded = True
 
     def process_live_bar(self, bar_data: np.array) -> None:
         if self.is_debug:
@@ -152,20 +156,10 @@ class QuoteListener(SilentBarListener):
         high_price = bar_data['high_p'][0]
         low_price = bar_data['low_p'][0]
         close_price = bar_data['close_p'][0]
-        quote_time = bar_data['datetime'][0]
         ticker = self.data_dict[name]
 
-        ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
-        '''
-        Init UI if necessary
-        '''
-        ticker.update_indicator(time_interval)
-        if not ticker.is_ui_loaded:
-            for interval in self.gui_callbacks.keys():
-                self.update_gui(ticker, interval)
-            ticker.is_ui_loaded = True
-        else:
-            self.update_gui(ticker, time_interval)
+        ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price)
+        self.update_gui(ticker, time_interval)
 
     def process_history_bar(self, bar_data: np.array) -> None:
         if self.is_debug:
@@ -180,7 +174,7 @@ class QuoteListener(SilentBarListener):
         ticker = self.data_dict[name]
 
         if datetime.now() >= datetime.strptime(quote_time, "%Y-%m-%d %H:%M:%S"):
-            ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price, quote_time)
+            ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price)
             ticker.update_indicator(time_interval)
 
     @staticmethod

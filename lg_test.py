@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 
 import pyiqfeed as iq
 from dataservice.listener import QuoteListener
-from ui.test import Ui_Dialog
+from ui.test import Ui_MainWindow
 
 tickers = ['AUDCAD.FXCM',
            'AUDCHF.FXCM',
@@ -41,9 +41,14 @@ if __name__ == "__main__":
     Init GUI
     """
     app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+
+
+
+
+
 
     """
     Init listener
@@ -59,5 +64,5 @@ if __name__ == "__main__":
             bar_conn.watch(symbol=ticker, interval_len=15 * 60, interval_type='s', update=1, lookback_bars=205)
             bar_conn.watch(symbol=ticker, interval_len=60 * 60, interval_type='s', update=1, lookback_bars=205)
 
-        Dialog.show()
+        MainWindow.show()
         sys.exit(app.exec_())
