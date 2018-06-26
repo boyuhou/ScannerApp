@@ -116,10 +116,10 @@ class QuoteListener(SilentBarListener):
         for watcher_name, is_touched in ticker.active_watchers.items():
             widget = self.callback_dict[ticker.full_name].signal_widget_dict[watcher_name]
             is_all_touched = is_touched and is_all_touched
-            if is_touched:
-                widget.setStyleSheet("background-color: green")
-            else:
-                widget.setStyleSheet("background-color: red")
+            # if is_touched:
+            #     widget.setStyleSheet("background-color: green")
+            # else:
+            #     widget.setStyleSheet("background-color: red")
         if (len(ticker.active_watchers.items()) > 0) and is_all_touched:
             self._show_popup(ticker.name)
 
