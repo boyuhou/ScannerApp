@@ -3067,6 +3067,97 @@
                 </widget>
             </item>
 
+            <item row="0" column="15">
+                <widget class="QLabel" name="message_title">
+                    <property name="text">
+                        <string>Message</string>
+                    </property>
+                </widget>
+            </item>
+            <item row="1" column="15">
+                <widget class="QLineEdit" name="le_msg_AUDCAD" />
+            </item>
+            <item row="2" column="15">
+                <widget class="QLineEdit" name="le_msg_AUDCHF" />
+            </item>
+            <item row="3" column="15">
+                <widget class="QLineEdit" name="le_msg_AUDJPY" />
+            </item>
+            <item row="4" column="15">
+                <widget class="QLineEdit" name="le_msg_AUDNZD" />
+            </item>
+            <item row="5" column="15">
+                <widget class="QLineEdit" name="le_msg_AUDUSD" />
+            </item>
+            <item row="6" column="15">
+                <widget class="QLineEdit" name="le_msg_CADCHF" />
+            </item>
+            <item row="7" column="15">
+                <widget class="QLineEdit" name="le_msg_CADJPY" />
+            </item>
+            <item row="8" column="15">
+                <widget class="QLineEdit" name="le_msg_CHFJPY" />
+            </item>
+            <item row="9" column="15">
+                <widget class="QLineEdit" name="le_msg_EURAUD" />
+            </item>
+            <item row="10" column="15">
+                <widget class="QLineEdit" name="le_msg_EURCAD" />
+            </item>
+            <item row="11" column="15">
+                <widget class="QLineEdit" name="le_msg_EURCHF" />
+            </item>
+            <item row="12" column="15">
+                <widget class="QLineEdit" name="le_msg_EURGBP" />
+            </item>
+            <item row="13" column="15">
+                <widget class="QLineEdit" name="le_msg_EURJPY" />
+            </item>
+            <item row="14" column="15">
+                <widget class="QLineEdit" name="le_msg_EURNZD" />
+            </item>
+            <item row="15" column="15">
+                <widget class="QLineEdit" name="le_msg_EURUSD" />
+            </item>
+            <item row="16" column="15">
+                <widget class="QLineEdit" name="le_msg_GBPAUD" />
+            </item>
+            <item row="17" column="15">
+                <widget class="QLineEdit" name="le_msg_GBPCAD" />
+            </item>
+            <item row="18" column="15">
+                <widget class="QLineEdit" name="le_msg_GBPCHF" />
+            </item>
+            <item row="19" column="15">
+                <widget class="QLineEdit" name="le_msg_GBPJPY" />
+            </item>
+            <item row="20" column="15">
+                <widget class="QLineEdit" name="le_msg_GBPNZD" />
+            </item>
+            <item row="21" column="15">
+                <widget class="QLineEdit" name="le_msg_GBPUSD" />
+            </item>
+            <item row="22" column="15">
+                <widget class="QLineEdit" name="le_msg_NZDCAD" />
+            </item>
+            <item row="23" column="15">
+                <widget class="QLineEdit" name="le_msg_NZDCHF" />
+            </item>
+            <item row="24" column="15">
+                <widget class="QLineEdit" name="le_msg_NZDJPY" />
+            </item>
+            <item row="25" column="15">
+                <widget class="QLineEdit" name="le_msg_NZDUSD" />
+            </item>
+            <item row="26" column="15">
+                <widget class="QLineEdit" name="le_msg_USDCAD" />
+            </item>
+            <item row="27" column="15">
+                <widget class="QLineEdit" name="le_msg_USDCHF" />
+            </item>
+            <item row="28" column="15">
+                <widget class="QLineEdit" name="le_msg_USDJPY" />
+            </item>
 
             <item row="1" column="17">
                 <widget class="QPushButton" name="submit_AUDCAD">

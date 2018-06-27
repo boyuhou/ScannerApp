@@ -72,7 +72,7 @@ class QuoteListener(SilentBarListener):
     def _update_gui_240min(self, ticker: Ticker) -> None:
         pass
 
-    def _update_text(self, prefix: str, ticker_name: str, value: float, digits=4):
+    def _update_text(self, prefix: str, ticker_name: str, value: float, digits=2):
         label_name = prefix + ticker_name
         label = getattr(self.ui, label_name)
         label.setText(self._str(value, digits))
@@ -121,12 +121,13 @@ class QuoteListener(SilentBarListener):
                 widget.setStyleSheet("background-color: green")
                 watchers_to_delete.append(watcher_name)
         if (len(ticker.active_watchers.items()) > 0) and is_all_touched:
-            self._show_popup(ticker.name)
+            self._show_popup(ticker.name, ticker.message)
+            ticker.message = ""
         for watcher_name in watchers_to_delete:
             del ticker.active_watchers[watcher_name]
 
-    def _show_popup(self, ticker_name: str):
-        self.system_tray_icon.showMessage('Ticker', ticker_name)
+    def _show_popup(self, ticker_name: str, message: str):
+        self.system_tray_icon.showMessage(ticker_name, message)
 
     """
     Listener callbacks
@@ -187,8 +188,9 @@ class QuoteListener(SilentBarListener):
     GUI control callbacks
     """
 
-    def btn_submit_callback(self, ticker_name: str, watcher_names: List[str]):
+    def btn_submit_callback(self, ticker_name: str, watcher_names: List[str], message: str):
         ticker = self.data_dict[ticker_name]
+        ticker.message = message
         ticker.start_watch(watcher_names)
 
     def btn_cancel_callback(self, ticker_name: str):
@@ -223,6 +225,7 @@ class QuoteListener(SilentBarListener):
                 Signals.P60EMA21: self.ckb_p60ema21,
                 Signals.P240EMA8: self.ckb_p240ema8
             }
+            self.line_edit_message = getattr(self.ui, 'le_msg_' + self.name)
             self.btn_submit = getattr(self.ui, 'submit_' + self.name)
             self.btn_cancel = getattr(self.ui, 'cancel_' + self.name)
 
@@ -236,7 +239,7 @@ class QuoteListener(SilentBarListener):
                     checkbox.setEnabled(False)
                     checkbox.setStyleSheet("background-color: red")
                     watchers.append(name)
-            self.outer_instance.btn_submit_callback(self.full_name, watchers)
+            self.outer_instance.btn_submit_callback(self.full_name, watchers, self.line_edit_message.text())
 
         def btn_cancel_callback(self):
             for checkbox in self.checkboxes.keys():

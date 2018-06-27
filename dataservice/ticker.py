@@ -107,6 +107,7 @@ class Ticker:
         self.active_watchers = {}
         self.is_ui_loaded = False
         self.multiplier = 100.0 if 'JPY' in self.name else 10000.0
+        self.message = ""
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float) -> None:
         self.close_price[time_interval].append(close_p)
