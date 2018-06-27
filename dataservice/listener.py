@@ -113,15 +113,17 @@ class QuoteListener(SilentBarListener):
 
     def update_gui_latest(self, ticker: Ticker):
         is_all_touched = True
+        watchers_to_delete = []
         for watcher_name, is_touched in ticker.active_watchers.items():
             widget = self.callback_dict[ticker.full_name].signal_widget_dict[watcher_name]
             is_all_touched = is_touched and is_all_touched
-            # if is_touched:
-            #     widget.setStyleSheet("background-color: green")
-            # else:
-            #     widget.setStyleSheet("background-color: red")
+            if is_touched:
+                widget.setStyleSheet("background-color: green")
+                watchers_to_delete.append(watcher_name)
         if (len(ticker.active_watchers.items()) > 0) and is_all_touched:
             self._show_popup(ticker.name)
+        for watcher_name in watchers_to_delete:
+            del ticker.active_watchers[watcher_name]
 
     def _show_popup(self, ticker_name: str):
         self.system_tray_icon.showMessage('Ticker', ticker_name)
@@ -232,6 +234,7 @@ class QuoteListener(SilentBarListener):
             for checkbox, name in self.checkboxes.items():
                 if checkbox.isChecked():
                     checkbox.setEnabled(False)
+                    checkbox.setStyleSheet("background-color: red")
                     watchers.append(name)
             self.outer_instance.btn_submit_callback(self.full_name, watchers)
 
