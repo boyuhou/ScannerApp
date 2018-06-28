@@ -54,7 +54,7 @@ class QuoteListener(SilentBarListener):
         self._update_bg_color("range20min5_", ticker.name, self._get_range5_bg_color(range_value))
         self._update_text("tsi5_", ticker.name, ticker.trend_smooth_indicator[5][-1])
         self._update_text("emao5_", ticker.name, ticker.ema_order[5][-1], 0)
-        self._update_bg_color("emao5_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[5][-1]))
+        self._update_bg_color("emao5_", ticker.name, self._get_ema_order_bg_color(ticker.ema_order[5][-1]))
 
     def _update_gui_15min(self, ticker: Ticker) -> None:
         range_value = ticker.range[15][-1]
@@ -62,12 +62,12 @@ class QuoteListener(SilentBarListener):
         self._update_bg_color("range20min15_", ticker.name, self._get_range15_bg_color(range_value))
         self._update_text("tsi15_", ticker.name, ticker.trend_smooth_indicator[15][-1])
         self._update_text("emao15_", ticker.name, ticker.ema_order[15][-1], 0)
-        self._update_bg_color("emao15_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[15][-1]))
+        self._update_bg_color("emao15_", ticker.name, self._get_ema_order_bg_color(ticker.ema_order[15][-1]))
 
     def _update_gui_60min(self, ticker: Ticker) -> None:
         self._update_text("tsi60_", ticker.name, ticker.trend_smooth_indicator[60][-1])
         self._update_text("emao60_", ticker.name, ticker.ema_order[60][-1], 0)
-        self._update_bg_color("emao60_", ticker.name, self._get_watcher_bg_color(ticker.ema_order[60][-1]))
+        self._update_bg_color("emao60_", ticker.name, self._get_ema_order_bg_color(ticker.ema_order[60][-1]))
 
     def _update_gui_240min(self, ticker: Ticker) -> None:
         pass
@@ -83,7 +83,7 @@ class QuoteListener(SilentBarListener):
         widget.setStyleSheet("background-color: {}".format(color))
 
     @staticmethod
-    def _get_watcher_bg_color(value: float) -> str:
+    def _get_ema_order_bg_color(value: float) -> str:
         if value == 1:
             return "green"
         elif value == -1:
@@ -162,6 +162,7 @@ class QuoteListener(SilentBarListener):
         ticker = self.data_dict[name]
 
         ticker.insert_new_price(time_interval, open_price, high_price, low_price, close_price)
+        ticker.update_indicator(time_interval)
         self.update_gui(ticker, time_interval)
 
     def process_history_bar(self, bar_data: np.array) -> None:
