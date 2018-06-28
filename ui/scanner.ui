@@ -3070,7 +3070,7 @@
             <item row="0" column="15">
                 <widget class="QLabel" name="message_title">
                     <property name="text">
-                        <string>Message</string>
+                        <string>Notification Message</string>
                     </property>
                 </widget>
             </item>
@@ -3159,196 +3159,486 @@
                 <widget class="QLineEdit" name="le_msg_USDJPY" />
             </item>
 
+
+            <item row="1" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_AUDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="2" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_AUDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="3" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_AUDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="4" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_AUDNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="5" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_AUDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="6" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_CADCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="7" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_CADJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="8" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_CHFJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="9" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="10" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="11" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="12" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURGBP">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="13" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="14" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="15" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_EURUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="16" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_GBPAUD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="17" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_GBPCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="18" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_GBPCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="19" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_GBPJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="20" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_GBPNZD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="21" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_GBPUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="22" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_NZDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="23" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_NZDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="24" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_NZDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="25" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_NZDUSD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="26" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_USDCAD">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="27" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_USDCHF">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+            <item row="28" column="16">
+                <widget class="QCheckBox" name="ckb_price_touch_USDJPY">
+                    <property name="text">
+                        <string/>
+                    </property>
+                </widget>
+            </item>
+
+            <item row="0" column="17">
+                <widget class="QLabel" name="price_touch">
+                    <property name="text">
+                        <string>Price Touch</string>
+                    </property>
+                </widget>
+            </item>
             <item row="1" column="17">
+                <widget class="QLineEdit" name="le_price_touch_AUDCAD" />
+            </item>
+            <item row="2" column="17">
+                <widget class="QLineEdit" name="le_price_touch_AUDCHF" />
+            </item>
+            <item row="3" column="17">
+                <widget class="QLineEdit" name="le_price_touch_AUDJPY" />
+            </item>
+            <item row="4" column="17">
+                <widget class="QLineEdit" name="le_price_touch_AUDNZD" />
+            </item>
+            <item row="5" column="17">
+                <widget class="QLineEdit" name="le_price_touch_AUDUSD" />
+            </item>
+            <item row="6" column="17">
+                <widget class="QLineEdit" name="le_price_touch_CADCHF" />
+            </item>
+            <item row="7" column="17">
+                <widget class="QLineEdit" name="le_price_touch_CADJPY" />
+            </item>
+            <item row="8" column="17">
+                <widget class="QLineEdit" name="le_price_touch_CHFJPY" />
+            </item>
+            <item row="9" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURAUD" />
+            </item>
+            <item row="10" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURCAD" />
+            </item>
+            <item row="11" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURCHF" />
+            </item>
+            <item row="12" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURGBP" />
+            </item>
+            <item row="13" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURJPY" />
+            </item>
+            <item row="14" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURNZD" />
+            </item>
+            <item row="15" column="17">
+                <widget class="QLineEdit" name="le_price_touch_EURUSD" />
+            </item>
+            <item row="16" column="17">
+                <widget class="QLineEdit" name="le_price_touch_GBPAUD" />
+            </item>
+            <item row="17" column="17">
+                <widget class="QLineEdit" name="le_price_touch_GBPCAD" />
+            </item>
+            <item row="18" column="17">
+                <widget class="QLineEdit" name="le_price_touch_GBPCHF" />
+            </item>
+            <item row="19" column="17">
+                <widget class="QLineEdit" name="le_price_touch_GBPJPY" />
+            </item>
+            <item row="20" column="17">
+                <widget class="QLineEdit" name="le_price_touch_GBPNZD" />
+            </item>
+            <item row="21" column="17">
+                <widget class="QLineEdit" name="le_price_touch_GBPUSD" />
+            </item>
+            <item row="22" column="17">
+                <widget class="QLineEdit" name="le_price_touch_NZDCAD" />
+            </item>
+            <item row="23" column="17">
+                <widget class="QLineEdit" name="le_price_touch_NZDCHF" />
+            </item>
+            <item row="24" column="17">
+                <widget class="QLineEdit" name="le_price_touch_NZDJPY" />
+            </item>
+            <item row="25" column="17">
+                <widget class="QLineEdit" name="le_price_touch_NZDUSD" />
+            </item>
+            <item row="26" column="17">
+                <widget class="QLineEdit" name="le_price_touch_USDCAD" />
+            </item>
+            <item row="27" column="17">
+                <widget class="QLineEdit" name="le_price_touch_USDCHF" />
+            </item>
+            <item row="28" column="17">
+                <widget class="QLineEdit" name="le_price_touch_USDJPY" />
+            </item>
+
+            <item row="1" column="27">
                 <widget class="QPushButton" name="submit_AUDCAD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="2" column="17">
+            <item row="2" column="27">
                 <widget class="QPushButton" name="submit_AUDCHF">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="3" column="17">
+            <item row="3" column="27">
                 <widget class="QPushButton" name="submit_AUDJPY">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="4" column="17">
+            <item row="4" column="27">
                 <widget class="QPushButton" name="submit_AUDNZD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="5" column="17">
+            <item row="5" column="27">
                 <widget class="QPushButton" name="submit_AUDUSD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="6" column="17">
+            <item row="6" column="27">
                 <widget class="QPushButton" name="submit_CADCHF">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="7" column="17">
+            <item row="7" column="27">
                 <widget class="QPushButton" name="submit_CADJPY">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="8" column="17">
+            <item row="8" column="27">
                 <widget class="QPushButton" name="submit_CHFJPY">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="9" column="17">
+            <item row="9" column="27">
                 <widget class="QPushButton" name="submit_EURAUD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="10" column="17">
+            <item row="10" column="27">
                 <widget class="QPushButton" name="submit_EURCAD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="11" column="17">
+            <item row="11" column="27">
                 <widget class="QPushButton" name="submit_EURCHF">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="12" column="17">
+            <item row="12" column="27">
                 <widget class="QPushButton" name="submit_EURGBP">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="13" column="17">
+            <item row="13" column="27">
                 <widget class="QPushButton" name="submit_EURJPY">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="14" column="17">
+            <item row="14" column="27">
                 <widget class="QPushButton" name="submit_EURNZD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="15" column="17">
+            <item row="15" column="27">
                 <widget class="QPushButton" name="submit_EURUSD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="16" column="17">
+            <item row="16" column="27">
                 <widget class="QPushButton" name="submit_GBPAUD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="17" column="17">
+            <item row="17" column="27">
                 <widget class="QPushButton" name="submit_GBPCAD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="18" column="17">
+            <item row="18" column="27">
                 <widget class="QPushButton" name="submit_GBPCHF">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="19" column="17">
+            <item row="19" column="27">
                 <widget class="QPushButton" name="submit_GBPJPY">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="20" column="17">
+            <item row="20" column="27">
                 <widget class="QPushButton" name="submit_GBPNZD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="21" column="17">
+            <item row="21" column="27">
                 <widget class="QPushButton" name="submit_GBPUSD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="22" column="17">
+            <item row="22" column="27">
                 <widget class="QPushButton" name="submit_NZDCAD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="23" column="17">
+            <item row="23" column="27">
                 <widget class="QPushButton" name="submit_NZDCHF">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="24" column="17">
+            <item row="24" column="27">
                 <widget class="QPushButton" name="submit_NZDJPY">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="25" column="17">
+            <item row="25" column="27">
                 <widget class="QPushButton" name="submit_NZDUSD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="26" column="17">
+            <item row="26" column="27">
                 <widget class="QPushButton" name="submit_USDCAD">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="27" column="17">
+            <item row="27" column="27">
                 <widget class="QPushButton" name="submit_USDCHF">
                     <property name="text">
                         <string>Submit</string>
                     </property>
                 </widget>
             </item>
-            <item row="28" column="17">
+            <item row="28" column="27">
                 <widget class="QPushButton" name="submit_USDJPY">
                     <property name="text">
                         <string>Submit</string>
@@ -3356,196 +3646,196 @@
                 </widget>
             </item>
 
-            <item row="1" column="18">
+            <item row="1" column="28">
                 <widget class="QPushButton" name="cancel_AUDCAD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="2" column="18">
+            <item row="2" column="28">
                 <widget class="QPushButton" name="cancel_AUDCHF">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="3" column="18">
+            <item row="3" column="28">
                 <widget class="QPushButton" name="cancel_AUDJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="4" column="18">
+            <item row="4" column="28">
                 <widget class="QPushButton" name="cancel_AUDNZD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="5" column="18">
+            <item row="5" column="28">
                 <widget class="QPushButton" name="cancel_AUDUSD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="6" column="18">
+            <item row="6" column="28">
                 <widget class="QPushButton" name="cancel_CADCHF">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="7" column="18">
+            <item row="7" column="28">
                 <widget class="QPushButton" name="cancel_CADJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="8" column="18">
+            <item row="8" column="28">
                 <widget class="QPushButton" name="cancel_CHFJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="9" column="18">
+            <item row="9" column="28">
                 <widget class="QPushButton" name="cancel_EURAUD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="10" column="18">
+            <item row="10" column="28">
                 <widget class="QPushButton" name="cancel_EURCAD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="11" column="18">
+            <item row="11" column="28">
                 <widget class="QPushButton" name="cancel_EURCHF">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="12" column="18">
+            <item row="12" column="28">
                 <widget class="QPushButton" name="cancel_EURGBP">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="13" column="18">
+            <item row="13" column="28">
                 <widget class="QPushButton" name="cancel_EURJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="14" column="18">
+            <item row="14" column="28">
                 <widget class="QPushButton" name="cancel_EURNZD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="15" column="18">
+            <item row="15" column="28">
                 <widget class="QPushButton" name="cancel_EURUSD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="16" column="18">
+            <item row="16" column="28">
                 <widget class="QPushButton" name="cancel_GBPAUD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="17" column="18">
+            <item row="17" column="28">
                 <widget class="QPushButton" name="cancel_GBPCAD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="18" column="18">
+            <item row="18" column="28">
                 <widget class="QPushButton" name="cancel_GBPCHF">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="19" column="18">
+            <item row="19" column="28">
                 <widget class="QPushButton" name="cancel_GBPJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="20" column="18">
+            <item row="20" column="28">
                 <widget class="QPushButton" name="cancel_GBPNZD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="21" column="18">
+            <item row="21" column="28">
                 <widget class="QPushButton" name="cancel_GBPUSD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="22" column="18">
+            <item row="22" column="28">
                 <widget class="QPushButton" name="cancel_NZDCAD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="23" column="18">
+            <item row="23" column="28">
                 <widget class="QPushButton" name="cancel_NZDCHF">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="24" column="18">
+            <item row="24" column="28">
                 <widget class="QPushButton" name="cancel_NZDJPY">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="25" column="18">
+            <item row="25" column="28">
                 <widget class="QPushButton" name="cancel_NZDUSD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="26" column="18">
+            <item row="26" column="28">
                 <widget class="QPushButton" name="cancel_USDCAD">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="27" column="18">
+            <item row="27" column="28">
                 <widget class="QPushButton" name="cancel_USDCHF">
                     <property name="text">
                         <string>Cancel</string>
                     </property>
                 </widget>
             </item>
-            <item row="28" column="18">
+            <item row="28" column="28">
                 <widget class="QPushButton" name="cancel_USDJPY">
                     <property name="text">
                         <string>Cancel</string>
