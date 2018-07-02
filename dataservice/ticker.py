@@ -7,25 +7,6 @@ import pandas as pd
 TSI_PERIOD = 200
 
 
-class Signals:
-    P5EMA50 = 'p5ema50'
-    P15EMA21 = 'p15ema21'
-    P15EMA50 = 'p15ema50'
-    P60EMA8 = 'p60ema8'
-    P60EMA21 = 'p60ema21'
-    P240EMA8 = 'p240ema8'
-
-
-WATCHER_PERIOD_DICT = {
-    Signals.P5EMA50: (5, 50),
-    Signals.P15EMA21: (15, 21),
-    Signals.P15EMA50: (15, 50),
-    Signals.P60EMA8: (60, 8),
-    Signals.P60EMA21: (60, 21),
-    Signals.P240EMA8: (240, 8),
-}
-
-
 class Ticker:
     def __init__(self, name: str):
         self.full_name = name
@@ -104,10 +85,19 @@ class Ticker:
             5: collections.deque(maxlen=TSI_PERIOD),
             15: collections.deque(maxlen=TSI_PERIOD)
         }
-        self.active_watchers = {}
+        self.watcher_groups: [WatcherGroup] = []
         self.is_ui_loaded = False
         self.multiplier = 100.0 if 'JPY' in self.name else 10000.0
-        self.message = ""
+        # self.message = ""
+        # self.watchers_price = {
+        #     Watchers.P5EMA50: self.ema[5][50],
+        #     Watchers.P15EMA21: self.ema[15][21],
+        #     Watchers.P15EMA50: self.ema[15][50],
+        #     Watchers.P60EMA8: self.ema[60][8],
+        #     Watchers.P60EMA21: self.ema[60][21],
+        #     Watchers.P240EMA8: self.ema[240][8],
+        #     Watchers.PRICE_TOUCHE: -1.0
+        # }
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float) -> None:
         self.close_price[time_interval].append(close_p)
@@ -122,24 +112,20 @@ class Ticker:
         self._update_tsi(interval)
         self._update_range20(interval)
 
-    def update_latest_price(self, high_p: float, low_p: float, time_interval: int) -> None:
-        for watcher_name, is_touched in self.active_watchers.items():
-            if not is_touched:
-                price_period = WATCHER_PERIOD_DICT[watcher_name][0]
-                if time_interval == price_period:
-                    ema_period = WATCHER_PERIOD_DICT[watcher_name][1]
-                    ema_price = list(self.ema[ema_period][price_period])[-1]
-                    self.active_watchers[watcher_name] = (low_p < ema_price) and (ema_price < high_p)
+    def update_latest_price(self, high_p: float, low_p: float, time_interval: int) -> [str]:
+        result: [str] = []
+        for watcher_group in self.watcher_groups:
+            group_result = watcher_group.update(high_p, low_p, time_interval)
+            result.extend(group_result)
+        return result
 
-    def start_watch(self, watcher_names: List[str]):
-        self.active_watchers = {}
-        for watcher_name in watcher_names:
-            self.active_watchers[watcher_name] = False
-
-        print('{} started watching {}'.format(self.name, self.active_watchers.keys()))
+    def start_watch(self, watcher_names: List[str], message: str, fixed_price: float):
+        watcher_group = WatcherGroup(self, watcher_names=watcher_names, message=message, fixed_price=fixed_price)
+        self.watcher_groups.append(watcher_group)
+        print('{} started watching {}'.format(self.name, watcher_names))
 
     def stop_watch(self):
-        self.active_watchers = {}
+        self.watcher_groups = []
         print('{} stopped watching'.format(self.name))
 
     def _update_all_ema(self, interval: int) -> None:
@@ -259,3 +245,89 @@ def _numpy_ewma_vectorized(data, window):
     cumsums = mult.cumsum()
     out = offset + cumsums * scale_arr[::-1]
     return out[-1]
+
+
+class Watchers:
+    P5EMA50 = 'p5ema50'
+    P15EMA21 = 'p15ema21'
+    P15EMA50 = 'p15ema50'
+    P60EMA8 = 'p60ema8'
+    P60EMA21 = 'p60ema21'
+    P240EMA8 = 'p240ema8'
+    PRICE_TOUCHE = 'price_touch'
+
+
+WATCHER_PERIOD_DICT = {
+    Watchers.P5EMA50: (5, 50),
+    Watchers.P15EMA21: (15, 21),
+    Watchers.P15EMA50: (15, 50),
+    Watchers.P60EMA8: (60, 8),
+    Watchers.P60EMA21: (60, 21),
+    Watchers.P240EMA8: (240, 8),
+
+}
+
+
+class Watcher:
+
+    def __init__(self, name: str, ticker: Ticker, fixed_price: float = None, ema_period: int = None,
+                 price_period: int = None):
+        self.name = name
+        self.ticker = ticker
+        self.fixed_price = fixed_price
+        self.ema_period = ema_period
+        self.price_period = price_period
+        self.is_fixed_price = True if fixed_price is not None else False
+        self.is_touched = False
+
+    def update(self, high: float, low: float) -> None:
+        if self.is_touched:
+            return
+
+        self.is_touched = self._update_is_touched(high, low, self.fixed_price) if self.is_fixed_price \
+            else self._update_is_touched(high, low, list(self.ticker.ema[self.ema_period][self.price_period])[-1])
+
+    @staticmethod
+    def _update_is_touched(high: float, low: float, price: float) -> bool:
+        return (high > price) and (price > low)
+
+
+class WatcherGroup:
+
+    def __init__(self, ticker: Ticker, watcher_names: [int], fixed_price: float, message: str = ""):
+        self.ticker = ticker
+        self.message = message
+        self.watchers = []
+        self.watcher_dict = {}
+        self.is_all_touched = False
+        self.is_show_popup = False
+        for watcher_name in watcher_names:
+            if watcher_name == Watchers.PRICE_TOUCHE:
+                watcher = Watcher(name=watcher_name, ticker=self.ticker, fixed_price=fixed_price)
+            else:
+                ema_price_period = WATCHER_PERIOD_DICT[watcher_name]
+                watcher = Watcher(name=watcher_name, ticker=self.ticker, ema_period=ema_price_period[1],
+                                  price_period=ema_price_period[0])
+            self.watchers.append(watcher)
+            self.watcher_dict[watcher] = False
+
+    def update(self, high: float, low: float, timer_interval: int) -> [str]:
+        self.is_show_popup = False
+        result = []
+        for watcher in self.watchers:
+            if watcher.is_fixed_price and timer_interval == 1:
+                watcher.update(high, low)
+            elif watcher.price_period == timer_interval:
+                watcher.update(high, low)
+            if watcher.is_touched != self.watcher_dict[watcher]:
+                result.append(watcher.name)
+                self.watcher_dict[watcher] = True
+
+        if not self.is_show_popup:
+            is_all_touched = True
+            for watcher in self.watchers:
+                is_all_touched = is_all_touched and watcher.is_touched
+            if is_all_touched:
+                self.is_show_popup = True
+
+        return result

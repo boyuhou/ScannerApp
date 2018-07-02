@@ -5,7 +5,7 @@ import numpy as np
 from PyQt5 import Qt
 from PyQt5.QtWidgets import QApplication
 
-from dataservice.ticker import Ticker, Signals
+from dataservice.ticker import Ticker, Watchers
 from pyiqfeed.listeners import SilentBarListener
 from ui.test import Ui_MainWindow
 
@@ -111,20 +111,14 @@ class QuoteListener(SilentBarListener):
         else:
             return "none"
 
-    def update_gui_latest(self, ticker: Ticker):
-        is_all_touched = True
-        watchers_to_delete = []
-        for watcher_name, is_touched in ticker.active_watchers.items():
+    def update_gui_latest(self, ticker: Ticker, watcher_names: [str]):
+        for watcher_name in watcher_names:
             widget = self.callback_dict[ticker.full_name].signal_widget_dict[watcher_name]
-            is_all_touched = is_touched and is_all_touched
-            if is_touched:
-                widget.setStyleSheet("background-color: green")
-                watchers_to_delete.append(watcher_name)
-        if (len(ticker.active_watchers.items()) > 0) and is_all_touched:
-            self._show_popup(ticker.name, ticker.message)
-            ticker.message = ""
-        for watcher_name in watchers_to_delete:
-            del ticker.active_watchers[watcher_name]
+            widget.setStyleSheet("background-color: green")
+        if len(watcher_names) > 0:
+            for watcher_group in ticker.watcher_groups:
+                if watcher_group.is_show_popup:
+                    self._show_popup(ticker.name, watcher_group.message)
 
     def _show_popup(self, ticker_name: str, message: str):
         self.system_tray_icon.showMessage(ticker_name, message)
@@ -142,8 +136,8 @@ class QuoteListener(SilentBarListener):
         time_interval = int(int(bar_data['id'][0].split('-')[2]) / 60)
         ticker = self.data_dict[name]
 
-        ticker.update_latest_price(high_price, low_price, time_interval)
-        self.update_gui_latest(ticker)
+        watcher_names = ticker.update_latest_price(high_price, low_price, time_interval)
+        self.update_gui_latest(ticker, watcher_names)
         # Init GUI if necessary
         if not ticker.is_ui_loaded:
             for interval in self.gui_callbacks.keys():
@@ -189,10 +183,9 @@ class QuoteListener(SilentBarListener):
     GUI control callbacks
     """
 
-    def btn_submit_callback(self, ticker_name: str, watcher_names: List[str], message: str):
+    def btn_submit_callback(self, ticker_name: str, watcher_names: List[str], message: str, fixed_price: float):
         ticker = self.data_dict[ticker_name]
-        ticker.message = message
-        ticker.start_watch(watcher_names)
+        ticker.start_watch(watcher_names, message, fixed_price)
 
     def btn_cancel_callback(self, ticker_name: str):
         ticker = self.data_dict[ticker_name]
@@ -210,23 +203,27 @@ class QuoteListener(SilentBarListener):
             self.ckb_p60ema8 = getattr(self.ui, 'ckb_p60ema8_' + self.name)
             self.ckb_p60ema21 = getattr(self.ui, 'ckb_p60ema21_' + self.name)
             self.ckb_p240ema8 = getattr(self.ui, 'ckb_p240ema8_' + self.name)
+            self.ckb_price_touch = getattr(self.ui, 'ckb_price_touch_' + self.name)
             self.checkboxes = {
-                self.ckb_p5ema50: Signals.P5EMA50,
-                self.ckb_p15ema21: Signals.P15EMA21,
-                self.ckb_p15ema50: Signals.P15EMA50,
-                self.ckb_p60ema8: Signals.P60EMA8,
-                self.ckb_p60ema21: Signals.P60EMA21,
-                self.ckb_p240ema8: Signals.P240EMA8
+                self.ckb_p5ema50: Watchers.P5EMA50,
+                self.ckb_p15ema21: Watchers.P15EMA21,
+                self.ckb_p15ema50: Watchers.P15EMA50,
+                self.ckb_p60ema8: Watchers.P60EMA8,
+                self.ckb_p60ema21: Watchers.P60EMA21,
+                self.ckb_p240ema8: Watchers.P240EMA8,
+                self.ckb_price_touch: Watchers.PRICE_TOUCHE
             }
             self.signal_widget_dict = {
-                Signals.P5EMA50: self.ckb_p5ema50,
-                Signals.P15EMA21: self.ckb_p15ema21,
-                Signals.P15EMA50: self.ckb_p15ema50,
-                Signals.P60EMA8: self.ckb_p60ema8,
-                Signals.P60EMA21: self.ckb_p60ema21,
-                Signals.P240EMA8: self.ckb_p240ema8
+                Watchers.P5EMA50: self.ckb_p5ema50,
+                Watchers.P15EMA21: self.ckb_p15ema21,
+                Watchers.P15EMA50: self.ckb_p15ema50,
+                Watchers.P60EMA8: self.ckb_p60ema8,
+                Watchers.P60EMA21: self.ckb_p60ema21,
+                Watchers.P240EMA8: self.ckb_p240ema8,
+                Watchers.PRICE_TOUCHE: self.ckb_price_touch
             }
             self.line_edit_message = getattr(self.ui, 'le_msg_' + self.name)
+            self.line_edit_fixed_price = getattr(self.ui, 'le_price_touch_' + self.name)
             self.btn_submit = getattr(self.ui, 'submit_' + self.name)
             self.btn_cancel = getattr(self.ui, 'cancel_' + self.name)
 
@@ -240,7 +237,12 @@ class QuoteListener(SilentBarListener):
                     checkbox.setEnabled(False)
                     checkbox.setStyleSheet("background-color: red")
                     watchers.append(name)
-            self.outer_instance.btn_submit_callback(self.full_name, watchers, self.line_edit_message.text())
+
+            message = self.line_edit_message.text()
+            self.line_edit_message.setText("")
+            fixed_price_text = self.line_edit_fixed_price.text()
+            fixed_price = float(fixed_price_text) if self.ckb_price_touch.isChecked() else None
+            self.outer_instance.btn_submit_callback(self.full_name, watchers, message, fixed_price)
 
         def btn_cancel_callback(self):
             for checkbox in self.checkboxes.keys():
