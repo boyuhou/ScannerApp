@@ -197,7 +197,10 @@ class QuoteListener(SilentBarListener):
             self.name = name.split(".")[0]
             self.outer_instance = outer_instance
             self.ui = outer_instance.ui
+            self.ckb_p5ema8 = getattr(self.ui, 'ckb_p5ema8_' + self.name)
+            self.ckb_p5ema21 = getattr(self.ui, 'ckb_p5ema21_' + self.name)
             self.ckb_p5ema50 = getattr(self.ui, 'ckb_p5ema50_' + self.name)
+            self.ckb_p15ema8 = getattr(self.ui, 'ckb_p15ema8_' + self.name)
             self.ckb_p15ema21 = getattr(self.ui, 'ckb_p15ema21_' + self.name)
             self.ckb_p15ema50 = getattr(self.ui, 'ckb_p15ema50_' + self.name)
             self.ckb_p60ema8 = getattr(self.ui, 'ckb_p60ema8_' + self.name)
@@ -205,7 +208,10 @@ class QuoteListener(SilentBarListener):
             self.ckb_p240ema8 = getattr(self.ui, 'ckb_p240ema8_' + self.name)
             self.ckb_price_touch = getattr(self.ui, 'ckb_price_touch_' + self.name)
             self.checkboxes = {
+                self.ckb_p5ema8: Watchers.P5EMA8,
+                self.ckb_p5ema21: Watchers.P5EMA21,
                 self.ckb_p5ema50: Watchers.P5EMA50,
+                self.ckb_p15ema8: Watchers.P15EMA8,
                 self.ckb_p15ema21: Watchers.P15EMA21,
                 self.ckb_p15ema50: Watchers.P15EMA50,
                 self.ckb_p60ema8: Watchers.P60EMA8,
@@ -214,7 +220,10 @@ class QuoteListener(SilentBarListener):
                 self.ckb_price_touch: Watchers.PRICE_TOUCHE
             }
             self.signal_widget_dict = {
+                Watchers.P5EMA8: self.ckb_p5ema8,
+                Watchers.P5EMA21: self.ckb_p5ema21,
                 Watchers.P5EMA50: self.ckb_p5ema50,
+                Watchers.P15EMA8: self.ckb_p15ema8,
                 Watchers.P15EMA21: self.ckb_p15ema21,
                 Watchers.P15EMA50: self.ckb_p15ema50,
                 Watchers.P60EMA8: self.ckb_p60ema8,

@@ -248,7 +248,10 @@ def _numpy_ewma_vectorized(data, window):
 
 
 class Watchers:
+    P5EMA8 = 'p5ema8'
+    P5EMA21 = 'p5ema21'
     P5EMA50 = 'p5ema50'
+    P15EMA8 = 'p15ema8'
     P15EMA21 = 'p15ema21'
     P15EMA50 = 'p15ema50'
     P60EMA8 = 'p60ema8'
@@ -258,7 +261,10 @@ class Watchers:
 
 
 WATCHER_PERIOD_DICT = {
+    Watchers.P5EMA8: (5, 8),
+    Watchers.P5EMA21: (5, 21),
     Watchers.P5EMA50: (5, 50),
+    Watchers.P15EMA8: (15, 8),
     Watchers.P15EMA21: (15, 21),
     Watchers.P15EMA50: (15, 50),
     Watchers.P60EMA8: (60, 8),
