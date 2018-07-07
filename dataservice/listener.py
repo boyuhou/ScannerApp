@@ -242,7 +242,7 @@ class QuoteListener(SilentBarListener):
         def btn_submit_callback(self):
             watchers = []
             for checkbox, name in self.checkboxes.items():
-                if checkbox.isChecked():
+                if checkbox.isChecked() and checkbox.isEnabled():
                     checkbox.setEnabled(False)
                     checkbox.setStyleSheet("background-color: red")
                     watchers.append(name)
