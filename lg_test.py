@@ -4,7 +4,7 @@ from PyQt5 import QtWidgets
 
 import pyiqfeed as iq
 from dataservice.listener import QuoteListener
-from ui.test import Ui_MainWindow
+from ui.ui import ScannerUI
 
 tickers = ['AUDCAD.FXCM',
            'AUDCHF.FXCM',
@@ -42,14 +42,14 @@ if __name__ == "__main__":
     """
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = ScannerUI(tickers, app)
     ui.setupUi(MainWindow)
 
     """
     Init listener
     """
     bar_conn = iq.BarConn(name='scanner app connection')
-    bar_listener = QuoteListener(name='customized bar listener', ui=ui, tickers=tickers, ui_app=app, is_debug=True)
+    bar_listener = QuoteListener(name='customized bar listener', ui=ui, tickers=tickers, is_debug=True)
     bar_conn.add_listener(bar_listener)
 
     with iq.ConnConnector([bar_conn]) as conn:
