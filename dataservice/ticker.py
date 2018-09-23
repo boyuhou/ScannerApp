@@ -109,7 +109,7 @@ class Ticker:
         self._update_all_ema(interval)
         self._update_ema_order(interval)
         self._update_price_change(interval)
-        self._update_tsi(interval)
+        # self._update_tsi(interval)
         self._update_range20(interval)
 
     def update_latest_price(self, high_p: float, low_p: float, time_interval: int) -> [str]:

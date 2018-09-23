@@ -106,7 +106,7 @@ class ControlWidgetGroup:
         self.ckb_p15ema50 = getattr(self.scanner_ui, 'ckb_p15ema50_' + self.ticker_name)
         self.ckb_p60ema8 = getattr(self.scanner_ui, 'ckb_p60ema8_' + self.ticker_name)
         self.ckb_p60ema21 = getattr(self.scanner_ui, 'ckb_p60ema21_' + self.ticker_name)
-        self.ckb_p240ema8 = getattr(self.scanner_ui, 'ckb_p240ema8_' + self.ticker_name)
+        # self.ckb_p240ema8 = getattr(self.scanner_ui, 'ckb_p240ema8_' + self.ticker_name)
         self.ckb_price_touch = getattr(self.scanner_ui, 'ckb_price_touch_' + self.ticker_name)
         self.line_edit_message = getattr(self.scanner_ui, 'le_msg_' + self.ticker_name)
         self.line_edit_fixed_price = getattr(self.scanner_ui, 'le_price_touch_' + self.ticker_name)
@@ -122,7 +122,7 @@ class ControlWidgetGroup:
             'ckb_p15ema50_' + self.ticker_name: self.ckb_p15ema50,
             'ckb_p60ema8_' + self.ticker_name: self.ckb_p60ema8,
             'ckb_p60ema21_' + self.ticker_name: self.ckb_p60ema21,
-            'ckb_p240ema8_' + self.ticker_name: self.ckb_p240ema8,
+            # 'ckb_p240ema8_' + self.ticker_name: self.ckb_p240ema8,
             'ckb_price_touch_' + self.ticker_name: self.ckb_price_touch,
             'le_msg_' + self.ticker_name: self.line_edit_message,
             'le_price_touch_' + self.ticker_name: self.line_edit_fixed_price,
@@ -139,7 +139,7 @@ class ControlWidgetGroup:
             self.ckb_p15ema50: 'ckb_p15ema50_' + self.ticker_name,
             self.ckb_p60ema8: 'ckb_p60ema8_' + self.ticker_name,
             self.ckb_p60ema21: 'ckb_p60ema21_' + self.ticker_name,
-            self.ckb_p240ema8: 'ckb_p240ema8_' + self.ticker_name,
+            # self.ckb_p240ema8: 'ckb_p240ema8_' + self.ticker_name,
             self.ckb_price_touch: 'ckb_price_touch_' + self.ticker_name,
             self.line_edit_message: 'le_msg_' + self.ticker_name,
             self.line_edit_fixed_price: 'le_price_touch_' + self.ticker_name,
@@ -156,7 +156,7 @@ class ControlWidgetGroup:
             self.ckb_p15ema50: Watchers.P15EMA50,
             self.ckb_p60ema8: Watchers.P60EMA8,
             self.ckb_p60ema21: Watchers.P60EMA21,
-            self.ckb_p240ema8: Watchers.P240EMA8,
+            # self.ckb_p240ema8: Watchers.P240EMA8,
             self.ckb_price_touch: Watchers.PRICE_TOUCHE
         }
         self.watcher_widget_dict = {
@@ -168,7 +168,7 @@ class ControlWidgetGroup:
             Watchers.P15EMA50: self.ckb_p15ema50,
             Watchers.P60EMA8: self.ckb_p60ema8,
             Watchers.P60EMA21: self.ckb_p60ema21,
-            Watchers.P240EMA8: self.ckb_p240ema8,
+            # Watchers.P240EMA8: self.ckb_p240ema8,
             Watchers.PRICE_TOUCHE: self.ckb_price_touch
         }
 
