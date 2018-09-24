@@ -106,7 +106,12 @@ class ControlWidgetGroup:
         self.ckb_p15ema50 = getattr(self.scanner_ui, 'ckb_p15ema50_' + self.ticker_name)
         self.ckb_p60ema8 = getattr(self.scanner_ui, 'ckb_p60ema8_' + self.ticker_name)
         self.ckb_p60ema21 = getattr(self.scanner_ui, 'ckb_p60ema21_' + self.ticker_name)
-        # self.ckb_p240ema8 = getattr(self.scanner_ui, 'ckb_p240ema8_' + self.ticker_name)
+        self.ckb_p5rl10 = getattr(self.scanner_ui, 'ckb_p5rl10_' + self.ticker_name)
+        self.ckb_p5rl30 = getattr(self.scanner_ui, 'ckb_p5rl30_' + self.ticker_name)
+        self.ckb_p15rl10 = getattr(self.scanner_ui, 'ckb_p15rl10_' + self.ticker_name)
+        self.ckb_p15rl30 = getattr(self.scanner_ui, 'ckb_p15rl30_' + self.ticker_name)
+        self.ckb_p60rl10 = getattr(self.scanner_ui, 'ckb_p60rl10_' + self.ticker_name)
+        self.ckb_p60rl30 = getattr(self.scanner_ui, 'ckb_p60rl30_' + self.ticker_name)
         self.ckb_price_touch = getattr(self.scanner_ui, 'ckb_price_touch_' + self.ticker_name)
         self.line_edit_message = getattr(self.scanner_ui, 'le_msg_' + self.ticker_name)
         self.line_edit_fixed_price = getattr(self.scanner_ui, 'le_price_touch_' + self.ticker_name)
@@ -122,7 +127,12 @@ class ControlWidgetGroup:
             'ckb_p15ema50_' + self.ticker_name: self.ckb_p15ema50,
             'ckb_p60ema8_' + self.ticker_name: self.ckb_p60ema8,
             'ckb_p60ema21_' + self.ticker_name: self.ckb_p60ema21,
-            # 'ckb_p240ema8_' + self.ticker_name: self.ckb_p240ema8,
+            'ckb_p5rl10_' + self.ticker_name: self.ckb_p5rl10,
+            'ckb_p5rl30_' + self.ticker_name: self.ckb_p5rl30,
+            'ckb_p15rl10_' + self.ticker_name: self.ckb_p15rl10,
+            'ckb_p15rl30_' + self.ticker_name: self.ckb_p15rl30,
+            'ckb_p60rl10_' + self.ticker_name: self.ckb_p60rl10,
+            'ckb_p60rl30_' + self.ticker_name: self.ckb_p60rl30,
             'ckb_price_touch_' + self.ticker_name: self.ckb_price_touch,
             'le_msg_' + self.ticker_name: self.line_edit_message,
             'le_price_touch_' + self.ticker_name: self.line_edit_fixed_price,
@@ -139,7 +149,12 @@ class ControlWidgetGroup:
             self.ckb_p15ema50: 'ckb_p15ema50_' + self.ticker_name,
             self.ckb_p60ema8: 'ckb_p60ema8_' + self.ticker_name,
             self.ckb_p60ema21: 'ckb_p60ema21_' + self.ticker_name,
-            # self.ckb_p240ema8: 'ckb_p240ema8_' + self.ticker_name,
+            self.ckb_p5rl10: 'ckb_p5rl10_' + self.ticker_name,
+            self.ckb_p5rl30: 'ckb_p5rl30_' + self.ticker_name,
+            self.ckb_p15rl10: 'ckb_p15rl10_' + self.ticker_name,
+            self.ckb_p15rl30: 'ckb_p15rl30_' + self.ticker_name,
+            self.ckb_p60rl10: 'ckb_p60rl10_' + self.ticker_name,
+            self.ckb_p60rl30: 'ckb_p60rl30_' + self.ticker_name,
             self.ckb_price_touch: 'ckb_price_touch_' + self.ticker_name,
             self.line_edit_message: 'le_msg_' + self.ticker_name,
             self.line_edit_fixed_price: 'le_price_touch_' + self.ticker_name,
@@ -156,8 +171,14 @@ class ControlWidgetGroup:
             self.ckb_p15ema50: Watchers.P15EMA50,
             self.ckb_p60ema8: Watchers.P60EMA8,
             self.ckb_p60ema21: Watchers.P60EMA21,
-            # self.ckb_p240ema8: Watchers.P240EMA8,
-            self.ckb_price_touch: Watchers.PRICE_TOUCHE
+            self.ckb_price_touch: Watchers.PRICE_TOUCHE,
+            self.ckb_p5rl10: Watchers.P5RL10,
+            self.ckb_p5rl30: Watchers.P5RL30,
+            self.ckb_p15rl10: Watchers.P15RL10,
+            self.ckb_p15rl30: Watchers.P15RL30,
+            self.ckb_p60rl10: Watchers.P60RL10,
+            self.ckb_p60rl30: Watchers.P60RL30,
+
         }
         self.watcher_widget_dict = {
             Watchers.P5EMA8: self.ckb_p5ema8,
@@ -168,8 +189,13 @@ class ControlWidgetGroup:
             Watchers.P15EMA50: self.ckb_p15ema50,
             Watchers.P60EMA8: self.ckb_p60ema8,
             Watchers.P60EMA21: self.ckb_p60ema21,
-            # Watchers.P240EMA8: self.ckb_p240ema8,
-            Watchers.PRICE_TOUCHE: self.ckb_price_touch
+            Watchers.PRICE_TOUCHE: self.ckb_price_touch,
+            Watchers.P5RL10: self.ckb_p5rl10,
+            Watchers.P5RL30: self.ckb_p5rl30,
+            Watchers.P15RL10: self.ckb_p15rl10,
+            Watchers.P15RL30: self.ckb_p15rl30,
+            Watchers.P60RL10: self.ckb_p60rl10,
+            Watchers.P60RL30: self.ckb_p60rl30,
         }
 
         self.btn_submit.clicked.connect(self.btn_submit_callback)

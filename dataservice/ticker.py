@@ -3,8 +3,10 @@ from typing import List
 
 import numpy as np
 import pandas as pd
+from sklearn import linear_model
 
 TSI_PERIOD = 200
+REG_MODEL = linear_model.LinearRegression()
 
 
 class Ticker:
@@ -74,30 +76,25 @@ class Ticker:
             60: collections.deque(maxlen=TSI_PERIOD),
             240: collections.deque(maxlen=TSI_PERIOD),
         }
-        self.trend_smooth_indicator = {
-            1: collections.deque(maxlen=TSI_PERIOD),
-            5: collections.deque(maxlen=TSI_PERIOD),
-            15: collections.deque(maxlen=TSI_PERIOD),
-            60: collections.deque(maxlen=TSI_PERIOD),
-            240: collections.deque(maxlen=TSI_PERIOD),
-        }
         self.range = {
             5: collections.deque(maxlen=TSI_PERIOD),
             15: collections.deque(maxlen=TSI_PERIOD)
         }
+        self.rl = {
+            10: {
+                5: collections.deque(maxlen=TSI_PERIOD),
+                15: collections.deque(maxlen=TSI_PERIOD),
+                60: collections.deque(maxlen=TSI_PERIOD),
+            },
+            30: {
+                5: collections.deque(maxlen=TSI_PERIOD),
+                15: collections.deque(maxlen=TSI_PERIOD),
+                60: collections.deque(maxlen=TSI_PERIOD),
+            }
+        }
         self.watcher_groups: [WatcherGroup] = []
         self.is_ui_loaded = False
         self.multiplier = 100.0 if 'JPY' in self.name else 10000.0
-        # self.message = ""
-        # self.watchers_price = {
-        #     Watchers.P5EMA50: self.ema[5][50],
-        #     Watchers.P15EMA21: self.ema[15][21],
-        #     Watchers.P15EMA50: self.ema[15][50],
-        #     Watchers.P60EMA8: self.ema[60][8],
-        #     Watchers.P60EMA21: self.ema[60][21],
-        #     Watchers.P240EMA8: self.ema[240][8],
-        #     Watchers.PRICE_TOUCHE: -1.0
-        # }
 
     def insert_new_price(self, time_interval: int, open_p: float, high_p: float, low_p: float, close_p: float) -> None:
         self.close_price[time_interval].append(close_p)
@@ -109,8 +106,8 @@ class Ticker:
         self._update_all_ema(interval)
         self._update_ema_order(interval)
         self._update_price_change(interval)
-        # self._update_tsi(interval)
         self._update_range20(interval)
+        self._update_rl(interval)
 
     def update_latest_price(self, high_p: float, low_p: float, time_interval: int) -> [str]:
         result: [str] = []
@@ -149,15 +146,6 @@ class Ticker:
             self.price_change[interval].append(
                 (self.close_price[interval][-1] - self.close_price[interval][-2]) / self.close_price[interval][-2])
 
-    def _update_tsi(self, interval: int):
-        if len(self.price_change[interval]) < TSI_PERIOD:
-            self.trend_smooth_indicator[interval].append(np.nan)
-        else:
-            close_array = np.asarray(self.price_change[interval])
-            mean = np.mean(close_array)
-            std = np.std(close_array)
-            self.trend_smooth_indicator[interval].append(mean / std * 10.)
-
     def _update_ema(self, interval: int, ema_window: int) -> None:
         if len(self.close_price[interval]) < ema_window:
             self.ema[ema_window][interval].append(
@@ -183,6 +171,20 @@ class Ticker:
             self.ema_order[interval].append(-1)
         else:
             self.ema_order[interval].append(0)
+
+    def _update_rl(self, interval: int):
+        self._update_regression_line_value(interval=interval, rl_window=10)
+        self._update_regression_line_value(interval=interval, rl_window=30)
+
+    def _update_regression_line_value(self, interval: int, rl_window: int):
+        if interval not in [5, 15, 60]:
+            return
+        data_list = list(self.close_price[interval])[-rl_window:]
+        data_size = len(data_list)
+        x_axis = np.array([range(data_size)]).T
+        REG_MODEL.fit(x_axis, np.array(data_list))
+        rl_value = REG_MODEL.predict(np.array(data_size))[0]
+        self.rl[rl_window][interval].append(rl_value)
 
 
 def _get_adx_sum(s, n):
@@ -258,7 +260,31 @@ class Watchers:
     P60EMA21 = 'p60ema21'
     P240EMA8 = 'p240ema8'
     PRICE_TOUCHE = 'price_touch'
+    P5RL10 = 'p5rl10'
+    P5RL30 = 'p5rl30'
+    P15RL10 = 'p15rl30'
+    P15RL30 = 'p15rl30'
+    P60RL10 = 'p60rl10'
+    P60RL30 = 'p60rl30'
 
+
+RL_WATCHERS = [
+    Watchers.P5RL10,
+    Watchers.P5RL30,
+    Watchers.P15RL10,
+    Watchers.P15RL30,
+    Watchers.P60RL10,
+    Watchers.P60RL30,
+]
+
+RL_WATCHERS_PERIOD_DICT = {
+    Watchers.P5RL10: (5, 10),
+    Watchers.P5RL30: (5, 30),
+    Watchers.P15RL10: (15, 10),
+    Watchers.P15RL30: (15, 30),
+    Watchers.P60RL10: (60, 10),
+    Watchers.P60RL30: (60, 30),
+}
 
 WATCHER_PERIOD_DICT = {
     Watchers.P5EMA8: (5, 8),
@@ -277,21 +303,38 @@ WATCHER_PERIOD_DICT = {
 class Watcher:
 
     def __init__(self, name: str, ticker: Ticker, fixed_price: float = None, ema_period: int = None,
-                 price_period: int = None):
+                 price_period: int = None, is_rl: bool = False, rl_period: int = None, rl_interval: int = None):
         self.name = name
         self.ticker = ticker
         self.fixed_price = fixed_price
         self.ema_period = ema_period
         self.price_period = price_period
         self.is_fixed_price = True if fixed_price is not None else False
+        self.is_rl = is_rl
         self.is_touched = False
+
+        if self.is_rl:
+            self.rl_period = rl_period
+            self.rl_interval = rl_interval
+            self.rl_trend = self.is_rl_up()
 
     def update(self, high: float, low: float) -> None:
         if self.is_touched:
             return
 
-        self.is_touched = self._update_is_touched(high, low, self.fixed_price) if self.is_fixed_price \
-            else self._update_is_touched(high, low, list(self.ticker.ema[self.ema_period][self.price_period])[-1])
+        if self.is_fixed_price:
+            self.is_touched = self._update_is_touched(high, low, self.fixed_price)
+        elif self.is_rl:
+            self.is_touched = self.is_rl_turned()
+        else:
+            self.is_touched = self._update_is_touched(high, low, list(self.ticker.ema[self.ema_period][self.price_period])[-1])
+
+    def is_rl_up(self):
+        rl_list = list(self.ticker.rl[self.rl_period][self.rl_interval])
+        return (rl_list[-1] - rl_list[-2]) * (rl_list[-2] - rl_list[-3]) > 0
+
+    def is_rl_turned(self):
+        return not self.is_rl_up() == self.rl_trend
 
     @staticmethod
     def _update_is_touched(high: float, low: float, price: float) -> bool:
@@ -310,6 +353,10 @@ class WatcherGroup:
         for watcher_name in watcher_names:
             if watcher_name == Watchers.PRICE_TOUCHE:
                 watcher = Watcher(name=watcher_name, ticker=self.ticker, fixed_price=fixed_price)
+            elif watcher_name in RL_WATCHERS:
+                watcher = Watcher(name=watcher_name, ticker=self.ticker, is_rl=True,
+                                  rl_interval=RL_WATCHERS_PERIOD_DICT[watcher_name][0],
+                                  rl_period=RL_WATCHERS_PERIOD_DICT[watcher_name][1])
             else:
                 ema_price_period = WATCHER_PERIOD_DICT[watcher_name]
                 watcher = Watcher(name=watcher_name, ticker=self.ticker, ema_period=ema_price_period[1],
@@ -328,6 +375,8 @@ class WatcherGroup:
             if watcher.is_touched != self.watcher_dict[watcher]:
                 result.append(watcher.name)
                 self.watcher_dict[watcher] = True
+            if watcher.name in RL_WATCHERS:
+                result.append(watcher.name)
 
         if not self.is_show_popup:
             is_all_touched = True

@@ -3,7 +3,7 @@ from typing import List
 
 import numpy as np
 
-from dataservice.ticker import Ticker
+from dataservice.ticker import Ticker, RL_WATCHERS
 from pyiqfeed.listeners import SilentBarListener
 from ui.ui import ScannerUI
 
@@ -109,12 +109,18 @@ class QuoteListener(SilentBarListener):
         return '{number:.{digits}f}'.format(number=number, digits=digits)
 
     def update_gui_latest(self, ticker: Ticker, watcher_names: [str]):
+        rl_watcher_names = []
         for watcher_name in watcher_names:
-            # widget = self.callback_dict[ticker.full_name].signal_widget_dict[watcher_name]
-            # widget.setStyleSheet("background-color: green")
-            self.ui.on_watcher_color_change(ticker.name, watcher_name, "green")
+            if watcher_name in RL_WATCHERS:
+                rl_watcher_names.append(watcher_name)
+            else:
+                self.ui.on_watcher_color_change(ticker.name, watcher_name, "green")
         if len(watcher_names) > 0:
             for watcher_group in ticker.watcher_groups:
+                for watcher in watcher_group.watchers:
+                    if watcher.name in rl_watcher_names:
+                        self.ui.on_watcher_color_change(ticker.name, watcher.name,
+                                                        "green" if watcher.is_rl_up() else "red")
                 if watcher_group.is_show_popup:
                     self.ui.show_popup(ticker.name, watcher_group.message)
 
